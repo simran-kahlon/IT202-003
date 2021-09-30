@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en-US">
 
 <head>
@@ -8,18 +8,66 @@
         window.addEventListener("load", () => {
             console.log("loaded via javascript");
             //TODO: add any extra onload processing you may need here
+            getCurrentSelection();
         });
         function getCurrentSelection() {
             setTimeout(() => {
                 //added this delay here as some solutions may require it to update properly (i.e., click code may complete before the navigation changes)
                 //TODO: add code for processing the current selection 
-
+                const nav = document.querySelectorAll("nav>ul>li>a")
+                for(const element of nav)
+                {
+                    element.addEventListener("click",() => updateCurrentPage(element.innerText))
+                }
                 //Note: likely you'll want to call updateCurrentPage towards the end
             }, 100);
         }
     </script>
     <style>
         /* TODO: make edits here */
+        nav li
+        {
+            display:inline;
+            font-size:large;
+        }
+        nav ul
+        {
+            list-style-type:none;
+            background-color:lavender;
+        }
+        nav li a:hover
+        {
+            color:darkseagreen;
+        }
+        ul li
+        {
+           list-style: '\2713'; 
+        }
+        nav ul li a
+        {
+            display:inline-block;
+            padding: 0.5rem;
+        }
+        h1:first-letter
+        {
+            text-transform:uppercase;
+        }
+       a:first-letter
+        {
+            text-transform: uppercase;
+        }
+        h1,h2
+        {
+            color:rgb(94, 11, 228);
+            font:italic;
+            font-family:cursive
+        }
+        h3
+        {
+            color:rgb(202, 115, 202);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-style:oblique;
+        }
     </style>
     <!-- make the necessary edits above this line -->
 
