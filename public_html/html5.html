@@ -29,11 +29,6 @@ var targetX = 0;
 var targetY = 0;
 var targetLength = 25;
 
-//Properties for the obstacle
-var obstacleX = 0
-var obstacleY = 0
-var obstacleLength = 25;
-
 // Determine if number a is within the range b to c (exclusive)
 function isWithin(a, b, c) {
   return (a > b && a < c);
@@ -90,8 +85,7 @@ function menu() {
   context.font = '24px Arial';
   context.fillText('Click to Start', canvas.width / 2, canvas.height / 2);
   context.font = '18px Arial'
-  context.fillText('Collect green squares and avoid red square', canvas.width / 2, (canvas.height / 4) * 2.5);
-  context.fillText('Use the arrow keys to move', canvas.width / 2, (canvas.height / 4) * 3.1);
+  context.fillText('Use the arrow keys to move', canvas.width / 2, (canvas.height / 4) * 3);
   // Start the game on a click
   canvas.addEventListener('click', startGame);
 }
@@ -106,12 +100,9 @@ function startGame() {
   canvas.removeEventListener('click', startGame);
   // Put the target at a random starting point
 	moveTarget();
-  //Put the Obstacle at a random starting point
-  moveObstacle()
   // Kick off the draw loop
   draw();
 }
-
 
 // Show the game over screen
 function endGame() {
@@ -129,74 +120,6 @@ function endGame() {
 function moveTarget() {
   targetX = Math.round(Math.random() * canvas.width - targetLength);
   targetY = Math.round(Math.random() * canvas.height - targetLength)
-  
-  //make sure target not inside the square 
-  if (x-sideLength <= targetX <= x+sideLength)
-  {
-    targetX = Math.round(Math.random() * canvas.width - targetLength);
-  }
-  if(y-sideLength <= targetY <= y+sideLength)
-  {
-    targetY = Math.round(Math.random() * canvas.height - targetLength);
-  }
-
-  //keep target within the bounds
-  if (targetY + targetLength > canvas.height) {
-    targetY = Math.round(Math.random() * canvas.height - targetLength);
-  }
-  if (targetY < 0) {
-    targetY = Math.round(Math.random() * canvas.height - targetLength);
-  }
-  if (targetX < 0) {
-    targetX = Math.round(Math.random() * canvas.width - targetLength);
-  }
-  if (targetX + targetLength > canvas.width) {
-    targetX = Math.round(Math.random() * canvas.width - targetLength);
-  }
-}
-
-//Move the obstacle to a random position
-function moveObstacle(){
-  obstacleX = Math.round(Math.random() * canvas.width - obstacleLength);
-  obstacleY = Math.round(Math.random() * canvas.height - obstacleLength);
-
-  //make sure target and obstacle are not in the same spot
-  if (obstacleX == targetX && obstacleY == targetY)
-  {
-    obstacleX = Math.round(Math.random() * canvas.width - obstacleLength);
-    obstacleY = Math.round(Math.random() * canvas.height - obstacleLength);
-  }
-  if(targetX-targetLength <= obstacleX <= obstacleX + targetLength)
-  {
-    obstacleX = Math.round(Math.random() * canvas.width - obstacleLength);
-  }
-  if(targetY-targetLength <= obstacleY <= obstacleY + targetLength)
-  {
-    obstacleY = Math.round(Math.random() * canvas.height - obstacleLength);
-  }
-  //make sure obstacle not inside the square 
-  if (x-sideLength <= obstacleX <= x+sideLength)
-  {
-    obstacleX = Math.round(Math.random() * canvas.width - obstacleLength);
-  }
-  if(y-sideLength <= obstacleY <= y+sideLength)
-  {
-    obstacleY = Math.round(Math.random() * canvas.height - obstacleLength);
-  }
-
-  //keep obstacle within the bounds
-  if (obstacleY + obstacleLength > canvas.height) {
-    obstacleY = Math.round(Math.random() * canvas.height - obstacleLength);
-  }
-  if (obstacleY < 0) {
-    obstacleY = Math.round(Math.random() * canvas.height - obstacleLength);
-  }
-  if (obstacleX < 0) {
-    obstacleX = Math.round(Math.random() * canvas.width - obstacleLength);
-  }
-  if (obstacleX + obstacleLength > canvas.width) {
-    obstacleX = Math.round(Math.random() * canvas.width - obstacleLength);
-  }
 }
 
 // Clear the canvas
@@ -234,49 +157,27 @@ function draw() {
   if (x + sideLength > canvas.width) {
     x = canvas.width - sideLength;
   }
-  
+  // Collide with the target
+  if (isWithin(targetX, x, x + sideLength) || isWithin(targetX + targetLength, x, x + sideLength)) { // X
+    if (isWithin(targetY, y, y + sideLength) || isWithin(targetY + targetLength, y, y + sideLength)) { // Y
+      // Respawn the target
+      moveTarget();
+      // Increase the score
+      score++;
+    }
+  }
   // Draw the square
-  context.fillStyle = '#4A12E3';
+  context.fillStyle = '#FF0000';
   context.fillRect(x, y, sideLength, sideLength);
   // Draw the target 
   context.fillStyle = '#00FF00';
   context.fillRect(targetX, targetY, targetLength, targetLength);
-  //Draw the Obstacle 
-  context.fillStyle = '#FF0000';
-  context.fillRect(obstacleX, obstacleY, obstacleLength, obstacleLength)
   // Draw the score and time remaining
   context.fillStyle = '#000000';
   context.font = '24px Arial';
   context.textAlign = 'left';
   context.fillText('Score: ' + score, 10, 24);
   context.fillText('Time Remaining: ' + countdown, 10, 50);
-
-  // Collide with the target
-  if (isWithin(targetX, x, x + sideLength) || isWithin(targetX + targetLength, x, x + sideLength)) { // X
-    if (isWithin(targetY, y, y + sideLength) || isWithin(targetY + targetLength, y, y + sideLength)) { // Y
-      // Respawn the target
-      moveTarget();
-      //Respawm the obstacle
-      moveObstacle();
-      // Increase the score
-      score++;
-      //Increase square size
-      sideLength +=10;
-      
-    }
-  }
-  // Collide with the obstacle
-  if (isWithin(obstacleX, x, x + sideLength) || isWithin(obstacleX + obstacleLength, x, x + sideLength)) { // X
-    if (isWithin(obstacleY, y, y + sideLength) || isWithin(obstacleY + obstacleLength, y, y + sideLength)) { // Y
-      // Respawn the obstacle
-      moveObstacle();
-      // Decrease the score
-      score--;
-      //Decrease square size
-      sideLength -=10;
-    }
-  }
-
   // End the game or keep playing
   if (countdown <= 0) {
     endGame();
