@@ -17,7 +17,6 @@ var x = 50; // X position
 var y = 100; // Y position
 var speed = 6; // Distance to move each frame
 var sideLength = 50; // Length of each side of the square
-var sidelength = 50;
 
 // FLags to track which keys are pressed
 var down = false;
@@ -91,7 +90,8 @@ function menu() {
   context.font = '24px Arial';
   context.fillText('Click to Start', canvas.width / 2, canvas.height / 2);
   context.font = '18px Arial'
-  context.fillText('Use the arrow keys to move', canvas.width / 2, (canvas.height / 4) * 3);
+  context.fillText('Collect green squares and avoid red square', canvas.width / 2, (canvas.height / 4) * 2.5);
+  context.fillText('Use the arrow keys to move', canvas.width / 2, (canvas.height / 4) * 3.1);
   // Start the game on a click
   canvas.addEventListener('click', startGame);
 }
