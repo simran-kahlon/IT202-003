@@ -2,8 +2,8 @@
 require(__DIR__ . "/../../partials/nav.php"); ?>
 <form onsubmit="return validate(this)" method="POST">
     <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" required />
+        <label for="email">Username/Email</label>
+        <input type="text" name="email" required />
     </div>
     <div>
         <label for="pw">Password</label>
@@ -27,50 +27,88 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     //same as above but for password
     $password = se($_POST, "password", "", false);
     //TODO 3: validate/use
-    $errors = [];
+    //$errors = [];
+    $hasErrors = false;
     if (empty($email)) {
-        array_push($errors, "Email must be set");
+        //array_push($errors, "Email must be set");
+        flash("Username or email must be set", "warning");
+        $hasErrors = true;
     }
     //sanitize
-    $email = filter_var($email, FILTER_SANITIZE_EMAIL);
-    //validate
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        array_push($errors, "Invalid email address");
+    //$email = filter_var($email, FILTER_SANITIZE_EMAIL);
+    if (str_contains($email, "@")) {
+        $email = sanitize_email($email);
+        //validate
+        //if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (!is_valid_email($email)) {
+            //array_push($errors, "Invalid email address");
+            flash("Invalid email address", "warning");
+
+            $hasErrors = true;
+        }
+    } else {
+        if (!preg_match('/^[a-z0-9_-]{3,30}$/i', $email)) {
+            flash("Username must only be alphanumeric and can only contain - or _");
+            $hasErrors = true;
+        }
     }
     if (empty($password)) {
-        array_push($errors, "Password must be set");
+        //array_push($errors, "Password must be set");
+        flash("Password must be set");
+        $hasErrors = true;
     }
     if (strlen($password) < 8) {
-        array_push($errors, "Password must be 8 or more characters");
+        //array_push($errors, "Password must be 8 or more characters");
+        flash("Password must be at least 8 characters", "warning");
+        $hasErrors = true;
     }
-    if (count($errors) > 0) {
-        echo "<pre>" . var_export($errors, true) . "</pre>";
+    if ($hasErrors) {
+        //Nothing to output here, flash will do it
+        //can likely flip the if condition
+        //echo "<pre>" . var_export($errors, true) . "</pre>";
     } else {
         //TODO 4
         $db = getDB();
-        //lookup our user by email,, we must select the password here since MySQL can't do the comparison
-        $stmt = $db->prepare("SELECT email, password FROM Users WHERE email = :email");
+        $stmt = $db->prepare("SELECT id, username, email, password from Users where email = :email or username = :email");
         try {
             $r = $stmt->execute([":email" => $email]);
             if ($r) {
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
-                //check if we got the user, this returns false if no records matched
                 if ($user) {
                     $hash = $user["password"];
-                    //remove password from the user object so it doesn't leave scope (avoids password leakage in code)
                     unset($user["password"]);
                     if (password_verify($password, $hash)) {
-                        echo "Welcome, $email";
+                        ///echo "Weclome $email";
+                        $_SESSION["user"] = $user;
+                        //lookup potential roles
+                        $stmt = $db->prepare("SELECT Roles.name FROM Roles 
+                        JOIN UserRoles on Roles.id = UserRoles.role_id 
+                        where UserRoles.user_id = :user_id and Roles.is_active = 1 and UserRoles.is_active = 1");
+                        $stmt->execute([":user_id" => $user["id"]]);
+                        $roles = $stmt->fetchAll(PDO::FETCH_ASSOC); //fetch all since we'll want multiple
+                        //save roles or empty array
+                        if ($roles) {
+                            $_SESSION["user"]["roles"] = $roles; //at least 1 role
+                        } else {
+                            $_SESSION["user"]["roles"] = []; //no roles
+                        }
+                        die(header("Location: home.php"));
                     } else {
-                        echo "Invalid password";
+                        //echo "Invalid password";
+                        flash("Invalid password", "danger");
                     }
                 } else {
-                    echo "Invalid email";
+                    //echo "Invalid email";
+                    flash("Email not found", "danger");
                 }
             }
         } catch (Exception $e) {
-            echo "<pre>" . var_export($e, true) . "<pre>";
+            //echo "<pre>" . var_export($e, true) . "</pre>";
+            flash(var_export($e, true));
         }
     }
 }
+?>
+<?php
+require(__DIR__ . "/../../partials/flash.php");
 ?>
