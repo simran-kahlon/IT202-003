@@ -14,9 +14,12 @@
     background-color: rgb(211, 163, 59);
 }
 nav li{display: inline; background-color: rebeccapurple;}
-nav li a{color: rgb(213, 230, 195)}
+nav li a{color: rgb(251, 252, 249)}
 body{
     background-color: rgb(197, 230, 230);
     color: rgb(0, 0, 0);
-
 }
+nav li a:hover
+         {
+             color:rgb(133, 138, 133);
+         }
