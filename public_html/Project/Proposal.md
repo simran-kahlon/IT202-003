@@ -1,4 +1,4 @@
-# Project Name: Simple Shop
+# Project Name: Simple Arcade
 ## Project Summary: This project will create a simple e-commerce site for users. Administrators or store owners will be able to manage inventory and users will be able to manage their cart and place orders.
 ## Github Link: https://github.com/simkahlo/IT202-003/tree/prod
 ## Project Board Link: 
@@ -51,11 +51,12 @@
             - Direct Link: https://skk7-prod.herokuapp.com/Project/logout.php (this will take you to login page because that is where logout directs you so you can login again)
              - Pull Requests
                 - PR link #1: https://github.com/simkahlo/IT202-003/pull/23/commits/8a2afda7a95626daf737624f106f5bb6fea371c2
+                - PR link #2: https://github.com/simkahlo/IT202-003/pull/52
              - Screenshots
                  - Screenshot #1 <img width="482" alt="Screen Shot 2021-11-10 at 9 35 13 PM" src="https://user-images.githubusercontent.com/89927109/141227162-85a50aaa-ea6b-418d-be30-a5adc66c93e9.png">
                     - Screenshot #1 description: This page is login but it shows logout in the navigation bar so it shows that a person has to option of logging out. After you logout, it just directs you back to login page.
-               - Screenshot #2 <img width="482" alt="Screen Shot 2021-11-10 at 9 35 13 PM" src="https://user-images.githubusercontent.com/89927109/141227162-85a50aaa-ea6b-418d-be30-a5adc66c93e9.png">
-                    - Screenshot #2 description: This is the code to flash  succesfully logged out message
+               - Screenshot #2 <img width="353" alt="Screen Shot 2021-11-15 at 12 25 47 PM" src="https://user-images.githubusercontent.com/89927109/141826659-0243e7c1-ba6c-4851-9a43-3caa1ab06571.png">
+                    - Screenshot #2 description: This shows the logged out page with the succesfully logged out message and shows that it redirects you to login page
     - [ ] \(10/28/2021) Basic security rules implemented
          -  List of Evidence of Feature Completion
             - Status: Completed
@@ -77,6 +78,7 @@
             - Direct Link: https://skk7-prod.herokuapp.com/Project/admin/create_role.php; https://skk7-prod.herokuapp.com/Project/admin/list_roles.php; https://skk7-prod.herokuapp.com/Project/admin/assign_roles.php
              - Pull Requests
                 - PR link #1: https://github.com/simkahlo/IT202-003/pull/24
+                - PR link #2: https://github.com/simkahlo/IT202-003/pull/55
              - Screenshots
                  - Screenshot #1 <img width="472" alt="Screen Shot 2021-11-10 at 10 19 42 PM" src="https://user-images.githubusercontent.com/89927109/141231309-63e0a087-d95d-4528-8241-5c283c70c29e.png">
                     - Screenshot #1 description: This is what the create role page would like if you are in the admin role
@@ -86,7 +88,7 @@
                     - Screenshot #3 description: This is what the assign roles page would like if you are in the admin role
                - Screenshot #4 <img width="977" alt="Screen Shot 2021-11-10 at 10 23 36 PM" src="https://user-images.githubusercontent.com/89927109/141231644-e1652892-66c5-4245-a168-214f2675e357.png">
                     - Screenshot #3 description: This shows that I have the roles table
-    - [ ] \(10/28/21) Site should have basic styles/theme applied; everything shouldbe styled
+    - [ ] \(10/28/21) Site should have basic styles/theme applied; everything should be styled
          -  List of Evidence of Feature Completion
             - Status: Compeleted
             - Direct Link: https://skk7-prod.herokuapp.com/Project/styles.css (you could see the actual styles on the actual website by using nay of the other direct links)
@@ -95,7 +97,7 @@
              - Screenshots
                  - Screenshot #1 <img width="448" alt="Screen Shot 2021-11-10 at 10 10 58 PM" src="https://user-images.githubusercontent.com/89927109/141230602-58b00753-4af6-40dc-96bc-979fe12a256a.png">
                     - Screenshot #1 description: This shows the change in backgorund color, navigation bar layout, the navigation bar color, and change in color of the nav when you hover it. 
-               - Screenshot #2 <<img width="300" alt="Screen Shot 2021-11-10 at 10 12 20 PM" src="https://user-images.githubusercontent.com/89927109/141230717-e6d72992-2f98-4ab8-bd96-e88900e02df4.png">
+               - Screenshot #2 <img width="300" alt="Screen Shot 2021-11-10 at 10 12 20 PM" src="https://user-images.githubusercontent.com/89927109/141230717-e6d72992-2f98-4ab8-bd96-e88900e02df4.png">
                     - Screenshot #2 description: This shows the style for showing the errors. The colors for some other errors can aso be seen in the output messages/errors section below. 
     - [ ] \(10/11/2021) Any output messages/errors should be "user friendly"
          -  List of Evidence of Feature Completion
