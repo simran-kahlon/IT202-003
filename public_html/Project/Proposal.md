@@ -1,5 +1,5 @@
 # Project Name: Simple Arcade
-## Project Summary: This project will create a simple e-commerce site for users. Administrators or store owners will be able to manage inventory and users will be able to manage their cart and place orders.
+## Project Summary: This project will create a simple Arcade with scoreboards and competitions based on the implemented game.
 ## Github Link: https://github.com/simkahlo/IT202-003/tree/prod
 ## Project Board Link: 
 ## Website Link: https://skk7-prod.herokuapp.com/Project/login.php
