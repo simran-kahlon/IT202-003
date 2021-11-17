@@ -11,5 +11,8 @@ if (is_logged_in(true)) {
 }
 ?>
 <?php
+require(__DIR__ . "/../../public_html/Project/shooter.html");
+?>
+<?php
 require(__DIR__ . "/../../partials/flash.php");
 ?>
