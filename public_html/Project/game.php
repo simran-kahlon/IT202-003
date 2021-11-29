@@ -95,10 +95,6 @@ is_logged_in(true);
     clearInterval(timeoutId);
     // Show the final score
     erase();
-    context.fillStyle = '#000000';
-    context.font = '24px Arial';
-    context.textAlign = 'center';
-    context.fillText('Game Over. Final Score: ' + score, canvas.width / 2, canvas.height / 2);
     let data = new FormData();
     data.append("score", score);
     fetch("api/save_score.php", {
@@ -112,7 +108,7 @@ is_logged_in(true);
       let data = await res.json();
       console.log("received data", data);
       console.log("saved score");
-      //window.location.reload(); //lazily reloading the page to get a new nonce for next game
+      window.location.reload(); //lazily reloading the page to get a new nonce for next game
     })
   }
   
@@ -255,3 +251,6 @@ is_logged_in(true);
     border: 1px solid black;
   }
 </style>
+<?php
+    require_once(__DIR__ . "/../../partials/flash.php");
+?>
