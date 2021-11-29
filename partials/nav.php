@@ -30,6 +30,7 @@ require_once(__DIR__ . "/../lib/functions.php");
     <ul>
         <?php if (is_logged_in()) : ?>
             <li><a href="<?php echo get_url('home.php'); ?>">Home</a></li>
+            <li><a href="<?php echo get_url('game.php'); ?>">Play</a></li>
             <li><a href="<?php echo get_url('profile.php'); ?>">Profile</a></li>
         <?php endif; ?>
         <?php if (!is_logged_in()) : ?>
