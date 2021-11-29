@@ -159,3 +159,24 @@ function save_score($score, $user_id, $showFlash = false)
         flash("Error saving score: " . var_export($e->errorInfo, true), "danger");
     }
 }
+
+function get_latest_scores($user_id, $limit =10)
+{
+    if ($limit < 1 || $limit > 50) {
+        $limit = 10;
+    }
+    $query = "SELECT score, created from BGD_Scores where user_id = :id ORDER BY created desc LIMIT :limit";
+    $db = getDB();
+    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    $stmt = $db->prepare($query);
+    try {
+        $stmt->execute([":id" => $user_id, ":limit" => $limit]);
+        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($r) {
+            return $r;
+        }
+    } catch (PDOException $e) {
+        error_log("Error getting latest $limit scores for user $user_id: " . var_export($e->errorInfo, true));
+    }
+    return [];
+}
