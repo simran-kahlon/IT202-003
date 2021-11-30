@@ -8,7 +8,8 @@ $BASE_PATH = '/Project/'; //This is going to be a helper for redirecting to our 
  * Takes an array, a key, and default value and will return the value from the array if the key exists or the default value.
  * Can pass a flag to determine if the value will immediately echo or just return so it can be set to a variable
  */
-function se($v, $k = null, $default = "", $isEcho = true) {
+function se($v, $k = null, $default = "", $isEcho = true)
+{
     if (is_array($v) && isset($k) && isset($v[$k])) {
         $returnValue = $v[$k];
     } else if (is_object($v) && isset($k) && isset($v->$k)) {
@@ -136,4 +137,77 @@ function get_url($dest)
     }
     //handle relative path
     return $BASE_PATH . $dest;
+}
+
+function save_score($score, $user_id, $showFlash = false)
+{
+    if ($user_id < 1) {
+        flash("Error saving score, you may not be logged in", "warning");
+        return;
+    }
+    if ($score <= 0) {
+        flash("Scores of zero are not recorded", "warning");
+        return;
+    }
+    $db = getDB();
+    $stmt = $db->prepare("INSERT INTO BGD_Scores (score, user_id) VALUES (:score, :uid)");
+    try {
+        $stmt->execute([":score" => $score, ":uid" => $user_id]);
+        if ($showFlash) {
+            flash("Saved score of $score", "success");
+        }
+    } catch (PDOException $e) {
+        flash("Error saving score: " . var_export($e->errorInfo, true), "danger");
+    }
+}
+
+function get_latest_scores($user_id, $limit = 10)
+{
+    if ($limit < 1 || $limit > 50) {
+        $limit = 10;
+    }
+    $query = "SELECT score, created from BGD_Scores where user_id = :id ORDER BY created desc LIMIT :limit";
+    $db = getDB();
+    $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    $stmt = $db->prepare($query);
+    try {
+        $stmt->execute([":id" => $user_id, ":limit" => $limit]);
+        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($r) {
+            return $r;
+        }
+    } catch (PDOException $e) {
+        error_log("Error getting latest $limit scores for user $user_id: " . var_export($e->errorInfo, true));
+    }
+    return [];
+}
+
+function get_top_10($duration = "week")
+{
+    $d = "week";
+    if (in_array($duration, ["week", "month", "lifetime"])) {
+        //variable is safe
+        $d = $duration;
+    }
+    $db = getDB();
+    $query = "SELECT user_id,username, score, BGD_Scores.created from BGD_Scores join Users on BGD_Scores.user_id = Users.id";
+    if ($d !== "lifetime") {
+        //be very careful passing in a variable directly to SQL, I ensure it's a specific value from the in_array() above
+        $query .= " WHERE BGD_Scores.created >= DATE_SUB(NOW(), INTERVAL 1 $d)";
+    }
+    //remember to prefix any ambiguous columns (Users and Scores both have created)
+    $query .= " ORDER BY score Desc, BGD_Scores.created desc LIMIT 10"; //newest of the same score is ranked higher
+    error_log($query);
+    $stmt = $db->prepare($query);
+    $results = [];
+    try {
+        $stmt->execute();
+        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($r) {
+            $results = $r;
+        }
+    } catch (PDOException $e) {
+        error_log("Error fetching scores for $d: " . var_export($e->errorInfo, true));
+    }
+    return $results;
 }
