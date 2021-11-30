@@ -140,42 +140,47 @@
                     - Screenshot #1 description: shows that a user can successful update their profile using the "update profile" button at the bottom.
                     
 - Milestone 2
-    - [ ] \(mm/dd/yyyy of completion) Pick a simple game to implement, anything that generates a score that’s more advanced than a simple random number generator (may build off of a sample from the site shared in class)
+    - [ ] \(11/29/21) Pick a simple game to implement, anything that generates a score that’s more advanced than a simple random number generator (may build off of a sample from the site shared in class)
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/game.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - - PR link #1: https://github.com/simkahlo/IT202-003/pull/73
+                - PR link #2: https://github.com/simkahlo/IT202-003/pull/85 (after fixing the game)
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) The system will save the user’s score at the end of the game if the user is logged in
+                 - Screenshot #1 <img width="619" alt="Screen Shot 2021-11-29 at 9 26 16 PM" src="https://user-images.githubusercontent.com/89927109/143974721-1cb46aa8-3c6c-4c4c-b426-04d988b4d68b.png">
+                    - Screenshot #1 description: shows that I have a simple game on my website that also generates score. I am using the shooter game from html5 examples and you get scores for shooting at the enemy (green box). 
+    - [ ] \(11/29/21) The system will save the user’s score at the end of the game if the user is logged in
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/home.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/76
+                - PR link #2: https://github.com/simkahlo/IT202-003/pull/88 (after fixing saving scores)
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) The user will be able to see their last 10 scores
+                 - Screenshot #1: <img width="506" alt="Screen Shot 2021-11-29 at 9 35 34 PM" src="https://user-images.githubusercontent.com/89927109/143975606-fe66ea9c-8d81-4150-b58e-2c28da4a42b2.png">
+                    - Screenshot #1 description: shows the scores table with id, user_id, created columns and each of them are new entries since it doesn't have updated column 
+    - [ ] \(11/29/21) The user will be able to see their last 10 scores
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/79
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) Create functions that output the following scoreboards (this will be used later)
+                 - Screenshot #1: <img width="539" alt="Screen Shot 2021-11-29 at 9 39 37 PM" src="https://user-images.githubusercontent.com/89927109/143976007-2496b3cf-5fd9-4d93-abce-b8a01d6a7a5b.png">
+                    - Screenshot #1 description: shows the last 10 scores table on profile page ordered by most recent
+    - [ ] \(11/29/21) Create functions that output the following scoreboards (this will be used later)
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/home.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/82
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
+                 - Screenshot #1 <img width="934" alt="Screen Shot 2021-11-29 at 9 44 54 PM" src="https://user-images.githubusercontent.com/89927109/143976513-eeedc1d4-ff98-4394-a8ac-67c1b28240cc.png">
+                    - Screenshot #1 description: shows the function for scoreboard got top 10 weekly, monthly, and lifetime
+                 - Screenshot #2 <img width="453" alt="Screen Shot 2021-11-29 at 9 48 15 PM" src="https://user-images.githubusercontent.com/89927109/143976881-c0480d8a-fd18-4d2c-9cae-8981ae1a3940.png">
+                     - Screenshot #2 description: code to display proper message when there are no results 
+
 - Milestone 3
 - Milestone 4
 ### Intructions
