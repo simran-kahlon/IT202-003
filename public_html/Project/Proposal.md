@@ -23,7 +23,7 @@
 ### Proposal Checklist and Evidence
 
 - Milestone 1
-    - [ ] \(10/11/2021) User will be able to register a new account
+    - [x] \(10/11/2021) User will be able to register a new account
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/register.php page))
@@ -34,7 +34,7 @@
                     - Screenshot #1 description: I am showing the register page of my website to show that a person has the option of registering
                   - Screenshot #2 <img width="240" alt="Screen Shot 2021-11-08 at 1 43 52 PM" src="https://user-images.githubusercontent.com/89927109/141145010-8dc13e64-89ca-49f4-a03b-c00440e5439f.png">
                       - Screenshot #2 description: I am showing that a person is succesfully able to register 
-    - [ ] \(10/28/2021) User will be able to login to their account (given they enter the correct credentials)
+    - [x] \(10/28/2021) User will be able to login to their account (given they enter the correct credentials)
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/login.php
@@ -45,7 +45,7 @@
                     - Screenshot #1 description: shows the login screen and that people have a place to login
                  - Screenshot #2 <img width="482" alt="Screen Shot 2021-11-10 at 9 35 13 PM" src="https://user-images.githubusercontent.com/89927109/141227162-85a50aaa-ea6b-418d-be30-a5adc66c93e9.png">
                     - Screenshot #1 description: shows that a person can succesffuly log in with correct credentials 
-    - [ ] \(10/28/2021) User will be able to logout
+    - [x] \(10/28/2021) User will be able to logout
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/logout.php (this will take you to login page because that is where logout directs you so you can login again)
@@ -57,7 +57,7 @@
                     - Screenshot #1 description: This page is login but it shows logout in the navigation bar so it shows that a person has to option of logging out. After you logout, it just directs you back to login page.
                - Screenshot #2 <img width="353" alt="Screen Shot 2021-11-15 at 12 25 47 PM" src="https://user-images.githubusercontent.com/89927109/141826659-0243e7c1-ba6c-4851-9a43-3caa1ab06571.png">
                     - Screenshot #2 description: This shows the logged out page with the succesfully logged out message and shows that it redirects you to login page
-    - [ ] \(10/28/2021) Basic security rules implemented
+    - [x] \(10/28/2021) Basic security rules implemented
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/admin/create_role.php; https://skk7-prod.herokuapp.com/Project/admin/list_roles.php; https://skk7-prod.herokuapp.com/Project/admin/assign_roles.php
@@ -72,7 +72,7 @@
                     - Screenshot #3 description: This shows the error that is displayed when a non admin tries to go to admin roles
                   - Screenshot #4 <img width="380" alt="Screen Shot 2021-11-10 at 10 53 32 PM" src="https://user-images.githubusercontent.com/89927109/141234138-c4131226-c77a-4b49-97ca-656ad7bbbf2e.png">
                     - Screenshot #3 description: This shows the error that is displayed when a user tries to go to a page that is only avaiable once logged in such as the profile page
-    - [ ] \(10/28/2021) Basic Roles implemented
+    - [x] \(10/28/2021) Basic Roles implemented
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/admin/create_role.php; https://skk7-prod.herokuapp.com/Project/admin/list_roles.php; https://skk7-prod.herokuapp.com/Project/admin/assign_roles.php
@@ -88,7 +88,7 @@
                     - Screenshot #3 description: This is what the assign roles page would like if you are in the admin role
                - Screenshot #4 <img width="977" alt="Screen Shot 2021-11-10 at 10 23 36 PM" src="https://user-images.githubusercontent.com/89927109/141231644-e1652892-66c5-4245-a168-214f2675e357.png">
                     - Screenshot #3 description: This shows that I have the roles table
-    - [ ] \(10/28/21) Site should have basic styles/theme applied; everything should be styled
+    - [x] \(10/28/21) Site should have basic styles/theme applied; everything should be styled
          -  List of Evidence of Feature Completion
             - Status: Compeleted
             - Direct Link: https://skk7-prod.herokuapp.com/Project/styles.css (you could see the actual styles on the actual website by using nay of the other direct links)
@@ -99,7 +99,7 @@
                     - Screenshot #1 description: This shows the change in backgorund color, navigation bar layout, the navigation bar color, and change in color of the nav when you hover it. 
                - Screenshot #2 <img width="300" alt="Screen Shot 2021-11-10 at 10 12 20 PM" src="https://user-images.githubusercontent.com/89927109/141230717-e6d72992-2f98-4ab8-bd96-e88900e02df4.png">
                     - Screenshot #2 description: This shows the style for showing the errors. The colors for some other errors can aso be seen in the output messages/errors section below. 
-    - [ ] \(10/11/2021) Any output messages/errors should be "user friendly"
+    - [x] \(10/11/2021) Any output messages/errors should be "user friendly"
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/login.php
@@ -120,7 +120,7 @@
                     - Screenshot #6 description: shows the error that is displayed when a user tries to log into an account with an email not registered
                   - Screenshot #7 <img width="365" alt="current password incorrect when changing it" src="https://user-images.githubusercontent.com/89927109/141227563-2a6ce025-3634-400b-9cf7-43503dfb9d77.png">
                     - Screenshot #7 description: shows the error that is displayed when a user tries to change their password in their profile with the wronf curent password   
-    - [ ] \(10/28/2021) User will be able to see their profile
+    - [x] \(10/28/2021) User will be able to see their profile
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php
@@ -129,7 +129,7 @@
              - Screenshots
                  - Screenshot #1 <img width="294" alt="Screen Shot 2021-11-08 at 4 05 20 PM" src="https://user-images.githubusercontent.com/89927109/141227730-c06c8434-7739-4f30-83b0-f1af62c0e592.png">
                     - Screenshot #1 description: This shows my profile 
-    - [ ] \(10/28/2021) User will be able to edit their profile
+    - [x] \(10/28/2021) User will be able to edit their profile
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php (this link is to the profile page where you can update it)
@@ -140,7 +140,7 @@
                     - Screenshot #1 description: shows that a user can successful update their profile using the "update profile" button at the bottom.
                     
 - Milestone 2
-    - [ ] \(11/29/21) Pick a simple game to implement, anything that generates a score that’s more advanced than a simple random number generator (may build off of a sample from the site shared in class)
+    - [x] \(11/29/21) Pick a simple game to implement, anything that generates a score that’s more advanced than a simple random number generator (may build off of a sample from the site shared in class)
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/game.php
@@ -150,7 +150,7 @@
              - Screenshots
                  - Screenshot #1 <img width="619" alt="Screen Shot 2021-11-29 at 9 26 16 PM" src="https://user-images.githubusercontent.com/89927109/143974721-1cb46aa8-3c6c-4c4c-b426-04d988b4d68b.png">
                     - Screenshot #1 description: shows that I have a simple game on my website that also generates score. I am using the shooter game from html5 examples and you get scores for shooting at the enemy (green box). 
-    - [ ] \(11/29/21) The system will save the user’s score at the end of the game if the user is logged in
+    - [x] \(11/29/21) The system will save the user’s score at the end of the game if the user is logged in
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/home.php
@@ -160,7 +160,7 @@
              - Screenshots
                  - Screenshot #1: <img width="506" alt="Screen Shot 2021-11-29 at 9 35 34 PM" src="https://user-images.githubusercontent.com/89927109/143975606-fe66ea9c-8d81-4150-b58e-2c28da4a42b2.png">
                     - Screenshot #1 description: shows the scores table with id, user_id, created columns and each of them are new entries since it doesn't have updated column 
-    - [ ] \(11/29/21) The user will be able to see their last 10 scores
+    - [x] \(11/29/21) The user will be able to see their last 10 scores
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php
@@ -169,7 +169,7 @@
              - Screenshots
                  - Screenshot #1: <img width="539" alt="Screen Shot 2021-11-29 at 9 39 37 PM" src="https://user-images.githubusercontent.com/89927109/143976007-2496b3cf-5fd9-4d93-abce-b8a01d6a7a5b.png">
                     - Screenshot #1 description: shows the last 10 scores table on profile page ordered by most recent
-    - [ ] \(11/29/21) Create functions that output the following scoreboards (this will be used later)
+    - [x] \(11/29/21) Create functions that output the following scoreboards (this will be used later)
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/home.php
