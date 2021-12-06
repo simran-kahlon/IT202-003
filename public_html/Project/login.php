@@ -69,7 +69,7 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
     } else {
         //TODO 4
         $db = getDB();
-        $stmt = $db->prepare("SELECT id, username, email, password from Users where email = :email or username = :email");
+        $stmt = $db->prepare("SELECT id, username, email, points, password from Users where email = :email or username = :email");    
         try {
             $r = $stmt->execute([":email" => $email]);
             if ($r) {

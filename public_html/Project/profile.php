@@ -72,10 +72,13 @@ if (isset($_POST["save"])) {
 $email = get_user_email();
 $username = get_username();
 $user_id = get_user_id();
+$points = get_user_points();
 ?>
-
 <div class="container-fluid">
     <h1>Profile</h1>
+    <?php
+        echo("Points: $points ");
+    ?>
     <div>
         <?php $scores = get_latest_scores($user_id); ?>
         <details>
