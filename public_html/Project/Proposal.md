@@ -250,34 +250,34 @@
                 - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
              - Screenshots
                  - Screenshot #1: <img width="712" alt="Screen Shot 2021-12-10 at 11 56 27 PM" src="https://user-images.githubusercontent.com/89927109/145664391-136c16e4-03c9-4212-ac4e-9361995614db.png">
-                    - Screenshot #1 description: I have the table to show competion but for some reason it's keep having problems fetching competions with any code I change. I am trying to fix the issue. 
-    - [ ] \(mm/dd/yyyy of completion) Will need an association table CompetitionParticipants (id, comp_id, user_id, created)
+                    - Screenshot #1 description: I have the table to show competion but for some reason it's keep having problems fetching competions with any code I change. I have been trying to fix the issue for more than an hour and still trying.  
+    - [x] \(12/10/2021 of completion) Will need an association table CompetitionParticipants (id, comp_id, user_id, created)
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
+                 - Screenshot #1: <img width="496" alt="Screen Shot 2021-12-11 at 12 05 04 AM" src="https://user-images.githubusercontent.com/89927109/145664644-159f75e8-bcba-4270-8997-8c72272ccbe0.png">
+                    - Screenshot #1 description: shows the CompetionParticipants table created with the required columns. It is called CompetionParticipants. 
     - [ ] \(mm/dd/yyyy of completion) User can join active competitions 
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Pending
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/view_competition.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
+                 - Screenshot #1: <img width="569" alt="Screen Shot 2021-12-11 at 12 07 55 AM" src="https://user-images.githubusercontent.com/89927109/145664722-d93c8914-08f8-4b85-9df0-5916c09c9691.png">
+                    - Screenshot #1 description: I have these functions to have users join competion but I am not sure how well they work since I can't display competions on the website. Although I can't see other users joining the competion. I am able to see that the creator can join the competion. I have been trying to make these functions as best as I can. 
     - [ ] \(mm/dd/yyyy of completion) Create function that calculates competition winners
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Pending
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
+                 - Screenshot #1: <img width="456" alt="Screen Shot 2021-12-11 at 12 10 44 AM" src="https://user-images.githubusercontent.com/89927109/145664796-5146d37a-27bf-4637-a681-36b9c13069ac.png">
+                    - Screenshot #1 description: I have these functions so far but I am again not sure how well they work since I am unable to see anything on the website and because no other users can join the comeptions since they can't competitions. I have been trying to make these functions as best as I can. 
 - Milestone 4
     - [ ] \(mm/dd/yyyy of completion) User can set their profile to be public or private (will need another column in Users table)
          -  List of Evidence of Feature Completion
