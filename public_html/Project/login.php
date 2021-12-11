@@ -80,7 +80,6 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
                     if (password_verify($password, $hash)) {
                         ///echo "Weclome $email";
                         $_SESSION["user"] = $user;
-                        change_points(5, "login bonus", get_user_id());
                         //lookup potential roles
                         $stmt = $db->prepare("SELECT Roles.name FROM Roles 
                         JOIN UserRoles on Roles.id = UserRoles.role_id 
