@@ -182,87 +182,102 @@
                      - Screenshot #2 description: code to display proper message when there are no results 
 
 - Milestone 3
-    - [ ] \(mm/dd/yyyy of completion) User will have points associated with account
+    - [x] \(12/06/2021 of completion) User will have points associated with account
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/111
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) Create a PointsHistory table (id, user_id, point_change, reason, created)
+                 - Screenshot #1: <img width="439" alt="Screen Shot 2021-12-10 at 11 24 15 PM" src="https://user-images.githubusercontent.com/89927109/145663631-e7d95a88-96ae-4d97-8493-692a01f6a043.png">
+                    - Screenshot #1 description: this shows the code for altering the users table to add points column and shows default is 0
+                 - Screenshot #2: <img width="975" alt="Screen Shot 2021-12-10 at 11 24 27 PM" src="https://user-images.githubusercontent.com/89927109/145663669-fe2d6f65-e0f0-4fd1-9fbe-959a2f481396.png">
+                    - Screenshot #2 description: this shows users table actually having the points column
+                  - Screenshot #3: <img width="713" alt="Screen Shot 2021-12-10 at 11 27 55 PM" src="https://user-images.githubusercontent.com/89927109/145663697-96f413df-bbf3-479e-8d17-0507d196db56.png">
+                    - Screenshot #2 description: this shows the profile page of the website showing the user points
+    - [x] \(12/10/2021 of completion) Create a PointsHistory table (id, user_id, point_change, reason, created)
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/114 (creating actual table)
+                - PR link #2: https://github.com/simkahlo/IT202-003/pull/119 (has functions related to it)
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) Competitions table should have the following columns (id, name, created, duration, expires (now + duration), current_reward, starting_reward, join_fee, current_participants, min_participants, paid_out (boolean), min_score, first_place_per, second_place_per, third_place_per, cost_to_create, created, modified)
+                 - Screenshot #1: <img width="641" alt="Screen Shot 2021-12-10 at 11 33 18 PM" src="https://user-images.githubusercontent.com/89927109/145663835-3ae1b8e5-4450-4cfe-a94c-0e02b85d6be4.png">
+                    - Screenshot #1 description: shows the table with id, user_id, point_change, reason, created
+                 - Screenshot #2: <img width="655" alt="Screen Shot 2021-12-10 at 11 35 01 PM" src="https://user-images.githubusercontent.com/89927109/145663868-38b280b1-2084-4489-a946-a79ea1ba4fdd.png">
+                    - Screenshot #2 description: shows code for updating profile. hard to show on the website but you can see once you create a competition, the points go down by 1 + reward. the code shows sums the point_change.
+    - [x] \(12/10/2021 of completion) Competitions table should have the following columns (id, name, created, duration, expires (now + duration), current_reward, starting_reward, join_fee, current_participants, min_participants, paid_out (boolean), min_score, first_place_per, second_place_per, third_place_per, cost_to_create, created, modified)
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) User will be able to create a competion
+                 - Screenshot #1: <img width="939" alt="Screen Shot 2021-12-10 at 11 39 14 PM" src="https://user-images.githubusercontent.com/89927109/145664002-2f6520af-7a0a-4317-98a0-bee510fe7bdc.png">
+                  <img width="1005" alt="Screen Shot 2021-12-10 at 11 39 32 PM" src="https://user-images.githubusercontent.com/89927109/145664004-ebbd4103-f2be-4135-8cbf-835134ad700f.png">
+                  <img width="734" alt="Screen Shot 2021-12-10 at 11 39 55 PM" src="https://user-images.githubusercontent.com/89927109/145664005-3ca416c6-7174-4a0e-8d70-73cc393a52c7.png">
+                    - Screenshot #1 description: shows the Competitions table created with the requires column. The name of the table is Competitions
+    - [x] \(12/10/2021 of completion) User will be able to create a competion
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) Each new participant causes the Reward value to increase by at least 1 or 50% of the joining fee rounded up
+                 - Screenshot #1: <img width="699" alt="Screen Shot 2021-12-10 at 11 44 16 PM" src="https://user-images.githubusercontent.com/89927109/145664094-07cbf83b-f72a-4d68-9c73-c41750dcbe21.png">
+                    - Screenshot #1 description: create competition form to create competition
+                - Screenshot #2: <img width="749" alt="Screen Shot 2021-12-10 at 11 45 48 PM" src="https://user-images.githubusercontent.com/89927109/145664120-d9428f39-d189-4159-bcd7-e75c31e10c02.png">
+                    - Screenshot #2 description: shows the reward must start at 1, participants has to be at least 3, and join fee must be at least 0. it also shows that it displays user friendly messages. 
+                - Screenshot #3: <img width="773" alt="Screen Shot 2021-12-10 at 11 48 45 PM" src="https://user-images.githubusercontent.com/89927109/145664188-c4c40c66-218d-4f37-8e73-4c589368ad37.png">
+                    - Screenshot #3 description: shows successful message after creating competion
+                - Screenshot #4: <img width="507" alt="Screen Shot 2021-12-10 at 11 50 02 PM" src="https://user-images.githubusercontent.com/89927109/145664214-52ed31c7-f294-4a11-864f-6ba1f51cc3d9.png">
+                    - Screenshot #4 description: adds the competion creator to competitionParticipants
+                - Screenshot #5: <img width="705" alt="Screen Shot 2021-12-10 at 11 51 27 PM" src="https://user-images.githubusercontent.com/89927109/145664251-5e800f8d-0d56-4127-9e20-24a2b26b2fad.png">
+                    - Screenshot #5 description: acan't create competion if you can't affor it
+    - [x] \(12/10/21 of completion) Each new participant causes the Reward value to increase by at least 1 or 50% of the joining fee rounded up
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
+                 - Screenshot #1 <img width="622" alt="Screen Shot 2021-12-10 at 11 53 34 PM" src="https://user-images.githubusercontent.com/89927109/145664309-a5a83486-c7ac-472d-824b-a30ba0ea24c3.png">
+                    - Screenshot #1 description: line 275v of code shows that reward is updated by 50% of joining fee when participant is updated 
     - [ ] \(mm/dd/yyyy of completion) Have a page where the User can see active competitions (not expired)
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-             - Pull Requests
-                - PR link #1 (repeat as necessary)
+            - Status: Pending
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/view_competition.php
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) Will need an association table CompetitionParticipants (id, comp_id, user_id, created)
+                 - Screenshot #1: <img width="712" alt="Screen Shot 2021-12-10 at 11 56 27 PM" src="https://user-images.githubusercontent.com/89927109/145664391-136c16e4-03c9-4212-ac4e-9361995614db.png">
+                    - Screenshot #1 description: I have the table to show competion but for some reason it's keep having problems fetching competions with any code I change. I have been trying to fix the issue for more than an hour and still trying.  
+    - [x] \(12/10/2021 of completion) Will need an association table CompetitionParticipants (id, comp_id, user_id, created)
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
+                 - Screenshot #1: <img width="496" alt="Screen Shot 2021-12-11 at 12 05 04 AM" src="https://user-images.githubusercontent.com/89927109/145664644-159f75e8-bcba-4270-8997-8c72272ccbe0.png">
+                    - Screenshot #1 description: shows the CompetionParticipants table created with the required columns. It is called CompetionParticipants. 
     - [ ] \(mm/dd/yyyy of completion) User can join active competitions 
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Pending
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/view_competition.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
+                 - Screenshot #1: <img width="569" alt="Screen Shot 2021-12-11 at 12 07 55 AM" src="https://user-images.githubusercontent.com/89927109/145664722-d93c8914-08f8-4b85-9df0-5916c09c9691.png">
+                    - Screenshot #1 description: I have these functions to have users join competion but I am not sure how well they work since I can't display competions on the website. Although I can't see other users joining the competion. I am able to see that the creator can join the competion. I have been trying to make these functions as best as I can. 
     - [ ] \(mm/dd/yyyy of completion) Create function that calculates competition winners
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Pending
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
+                 - Screenshot #1: <img width="456" alt="Screen Shot 2021-12-11 at 12 10 44 AM" src="https://user-images.githubusercontent.com/89927109/145664796-5146d37a-27bf-4637-a681-36b9c13069ac.png">
+                    - Screenshot #1 description: I have these functions so far but I am again not sure how well they work since I am unable to see anything on the website and because no other users can join the comeptions since they can't competitions. I have been trying to make these functions as best as I can. 
 - Milestone 4
     - [ ] \(mm/dd/yyyy of completion) User can set their profile to be public or private (will need another column in Users table)
          -  List of Evidence of Feature Completion
