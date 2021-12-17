@@ -182,7 +182,7 @@
                      - Screenshot #2 description: code to display proper message when there are no results 
 
 - Milestone 3
-    - [x] \(12/06/2021 of completion) User will have points associated with account
+    - [x] \(12/06/2021) User will have points associated with account
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php
@@ -195,7 +195,7 @@
                     - Screenshot #2 description: this shows users table actually having the points column
                   - Screenshot #3: <img width="713" alt="Screen Shot 2021-12-10 at 11 27 55 PM" src="https://user-images.githubusercontent.com/89927109/145663697-96f413df-bbf3-479e-8d17-0507d196db56.png">
                     - Screenshot #2 description: this shows the profile page of the website showing the user points
-    - [x] \(12/10/2021 of completion) Create a PointsHistory table (id, user_id, point_change, reason, created)
+    - [x] \(12/10/2021) Create a PointsHistory table (id, user_id, point_change, reason, created)
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php
@@ -207,7 +207,7 @@
                     - Screenshot #1 description: shows the table with id, user_id, point_change, reason, created
                  - Screenshot #2: <img width="655" alt="Screen Shot 2021-12-10 at 11 35 01 PM" src="https://user-images.githubusercontent.com/89927109/145663868-38b280b1-2084-4489-a946-a79ea1ba4fdd.png">
                     - Screenshot #2 description: shows code for updating profile. hard to show on the website but you can see once you create a competition, the points go down by 1 + reward. the code shows sums the point_change.
-    - [x] \(12/10/2021 of completion) Competitions table should have the following columns (id, name, created, duration, expires (now + duration), current_reward, starting_reward, join_fee, current_participants, min_participants, paid_out (boolean), min_score, first_place_per, second_place_per, third_place_per, cost_to_create, created, modified)
+    - [x] \(12/10/2021) Competitions table should have the following columns (id, name, created, duration, expires (now + duration), current_reward, starting_reward, join_fee, current_participants, min_participants, paid_out (boolean), min_score, first_place_per, second_place_per, third_place_per, cost_to_create, created, modified)
          -  List of Evidence of Feature Completion
             - Status: Completed
              - Pull Requests
@@ -217,7 +217,7 @@
                   <img width="1005" alt="Screen Shot 2021-12-10 at 11 39 32 PM" src="https://user-images.githubusercontent.com/89927109/145664004-ebbd4103-f2be-4135-8cbf-835134ad700f.png">
                   <img width="734" alt="Screen Shot 2021-12-10 at 11 39 55 PM" src="https://user-images.githubusercontent.com/89927109/145664005-3ca416c6-7174-4a0e-8d70-73cc393a52c7.png">
                     - Screenshot #1 description: shows the Competitions table created with the requires column. The name of the table is Competitions
-    - [x] \(12/10/2021 of completion) User will be able to create a competion
+    - [x] \(12/10/2021) User will be able to create a competion
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
@@ -234,7 +234,7 @@
                     - Screenshot #4 description: adds the competion creator to competitionParticipants
                 - Screenshot #5: <img width="705" alt="Screen Shot 2021-12-10 at 11 51 27 PM" src="https://user-images.githubusercontent.com/89927109/145664251-5e800f8d-0d56-4127-9e20-24a2b26b2fad.png">
                     - Screenshot #5 description: acan't create competion if you can't affor it
-    - [x] \(12/10/21 of completion) Each new participant causes the Reward value to increase by at least 1 or 50% of the joining fee rounded up
+    - [x] \(12/10/21) Each new participant causes the Reward value to increase by at least 1 or 50% of the joining fee rounded up
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
@@ -243,14 +243,17 @@
              - Screenshots
                  - Screenshot #1 <img width="622" alt="Screen Shot 2021-12-10 at 11 53 34 PM" src="https://user-images.githubusercontent.com/89927109/145664309-a5a83486-c7ac-472d-824b-a30ba0ea24c3.png">
                     - Screenshot #1 description: line 275v of code shows that reward is updated by 50% of joining fee when participant is updated 
-    - [ ] \(mm/dd/yyyy of completion) Have a page where the User can see active competitions (not expired)
+    - [x] \(12/16/2021) Have a page where the User can see active competitions (not expired)
          -  List of Evidence of Feature Completion
-            - Status: Pending
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/view_competition.php
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/list_competition.php
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/130 (shows the cde for competition list and view competition)
+                - PR link #2: https://github.com/simkahlo/IT202-003/pull/136 (Minor fixes: error message fix and added limit to competitions list)
              - Screenshots
-                 - Screenshot #1: <img width="712" alt="Screen Shot 2021-12-10 at 11 56 27 PM" src="https://user-images.githubusercontent.com/89927109/145664391-136c16e4-03c9-4212-ac4e-9361995614db.png">
-                    - Screenshot #1 description: I have the table to show competion but for some reason it's keep having problems fetching competions with any code I change. I have been trying to fix the issue for more than an hour and still trying.  
+                 - Screenshot #1: <img width="761" alt="Screen Shot 2021-12-17 at 12 03 26 AM" src="https://user-images.githubusercontent.com/89927109/146491801-93ef2363-6f41-41e7-9a47-5aa75c089568.png">
+                    - Screenshot #1 description: Shows the list of active competitions on the webpage. Also shows that they are ordered from expiring soonest to latest. After creating moe than 10 competitions on the website, you can also see that it only displays 10 competitions on this page. 
+                - Screenshot #2: <img width="911" alt="Screen Shot 2021-12-17 at 12 05 02 AM" src="https://user-images.githubusercontent.com/89927109/146491904-dee7aa58-90e3-49e4-b342-18aae74d97b1.png">
+                    - Screenshot #2 description: Shows the page to view each competition 
     - [x] \(12/10/2021 of completion) Will need an association table CompetitionParticipants (id, comp_id, user_id, created)
          -  List of Evidence of Feature Completion
             - Status: Completed
@@ -260,24 +263,28 @@
              - Screenshots
                  - Screenshot #1: <img width="496" alt="Screen Shot 2021-12-11 at 12 05 04 AM" src="https://user-images.githubusercontent.com/89927109/145664644-159f75e8-bcba-4270-8997-8c72272ccbe0.png">
                     - Screenshot #1 description: shows the CompetionParticipants table created with the required columns. It is called CompetionParticipants. 
-    - [ ] \(mm/dd/yyyy of completion) User can join active competitions 
+    - [x] \(12/16/2021) User can join active competitions 
          -  List of Evidence of Feature Completion
-            - Status: Pending
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/view_competition.php
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/list_competition.php
              - Pull Requests
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119 (function created)
+                - PR link #2: https://github.com/simkahlo/IT202-003/pull/133 (minor fixes to make it actually work)
              - Screenshots
-                 - Screenshot #1: <img width="569" alt="Screen Shot 2021-12-11 at 12 07 55 AM" src="https://user-images.githubusercontent.com/89927109/145664722-d93c8914-08f8-4b85-9df0-5916c09c9691.png">
-                    - Screenshot #1 description: I have these functions to have users join competion but I am not sure how well they work since I can't display competions on the website. Although I can't see other users joining the competion. I am able to see that the creator can join the competion. I have been trying to make these functions as best as I can. 
-    - [ ] \(mm/dd/yyyy of completion) Create function that calculates competition winners
+                 - Screenshot #1: <img width="686" alt="Screen Shot 2021-12-17 at 12 16 35 AM" src="https://user-images.githubusercontent.com/89927109/146492858-a2061dac-03ed-4fec-90fb-6b41b1707e11.png">
+                    - Screenshot #1 description: shows that a user have the option of joing a competition if they want to. Also shows if a user already joined the competition
+                - Screenshot #2: <img width="807" alt="Screen Shot 2021-12-17 at 12 20 33 AM" src="https://user-images.githubusercontent.com/89927109/146493195-6477e385-8620-4b8e-a18c-8aeae690f743.png">
+                    - Screenshot #2 description: this function recalculates the competitions participants as well as the reward when others join competitions. 
+    - [x] \(12/16/2021) Create function that calculates competition winners
          -  List of Evidence of Feature Completion
-            - Status: Pending
+            - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
              - Pull Requests
                 - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
+                - PR link #2: https://github.com/simkahlo/IT202-003/pull/141 (minor fix)
              - Screenshots
                  - Screenshot #1: <img width="456" alt="Screen Shot 2021-12-11 at 12 10 44 AM" src="https://user-images.githubusercontent.com/89927109/145664796-5146d37a-27bf-4637-a681-36b9c13069ac.png">
-                    - Screenshot #1 description: I have these functions so far but I am again not sure how well they work since I am unable to see anything on the website and because no other users can join the comeptions since they can't competitions. I have been trying to make these functions as best as I can. 
+                    - Screenshot #1 description: functions to calculate competition winners.  
 - Milestone 4
     - [ ] \(mm/dd/yyyy of completion) User can set their profile to be public or private (will need another column in Users table)
          -  List of Evidence of Feature Completion
