@@ -1,6 +1,6 @@
 <?php
 require(__DIR__ . "/../../partials/nav.php");
-is_logged_in(true);
+// is_logged_in(true);
 ?>
 <h1> Shooter </h1>
 <canvas id="canvas" width="600" height="400" tabindex="1"></canvas>
