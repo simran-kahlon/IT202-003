@@ -11,8 +11,9 @@ if (isset($_POST["join"])) {
 }
 $id = se($_GET, "id", -1, false);
  if ($id < 1) {
-    flash("Invalid competition", "danger");
+    
     redirect("list_competition.php");
+    flash("Invalid competition", "danger");
 } 
 //handle page load
 $stmt = $db->prepare("SELECT Competitions.id, name, min_participants, current_participants, 
@@ -77,3 +78,6 @@ try {
     include(__DIR__ . "/../../partials/score_table.php");
     ?>
 </div>
+<?php
+        require_once(__DIR__ . "/../../partials/flash.php");
+?>

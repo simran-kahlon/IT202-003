@@ -10,15 +10,13 @@ if (isset($_POST["join"])) {
     $points = get_user_points();
     join_competition($comp_id, $user_id, $fee);
 }
- $per_page = 5;
- paginate("SELECT count(1) as total FROM Competitions WHERE expires > current_timestamp() AND paid_out < 1 AND paid_out < 1");
 //handle page load
 //TODO fix join
 $stmt = $db->prepare("SELECT Competitions.id, name, min_participants, current_participants, 
 join_fee, starting_reward, current_reward, paid_out, duration, expires, min_score, IF(comp_id is null, 0, 1) as joined,
 CONCAT(first_place_per,'% - ', second_place_per, '% - ', third_place_per, '%') as place FROM Competitions
 LEFT JOIN (SELECT * FROM CompetitionParticipants WHERE user_id = :uid) as uc ON 
-uc.comp_id = Competitions.id WHERE expires > current_timestamp() AND paid_out < 1 ORDER BY expires desc");
+uc.comp_id = Competitions.id WHERE expires > current_timestamp() AND paid_out < 1 ORDER BY expires asc limit 10");
 $results = [];
 try {
     $stmt->execute([":uid" => get_user_id()]);
@@ -95,3 +93,6 @@ try {
         </tbody>
     </table>
 </div>
+<?php
+        require_once(__DIR__ . "/../../partials/flash.php");
+?>
