@@ -3,21 +3,28 @@ require_once(__DIR__ . "/../lib/functions.php");
 if (!isset($duration)) {
     $duration = "day"; //choosing to default to day
 }
-$results = get_top_10($duration);
+if (!isset($title)) {
+    $title = "Top Scores";
+}
+if (!isset($scores)) {
+    $results = get_top_10($duration);
 
-switch ($duration) {
-    case "week":
-        $title = "Top Scores This Week";
-        break;
-    case "month":
-        $title = "Top Scores This Month";
-        break;
-    case "lifetime":
-        $title = "All Time Top Scores";
-        break;
-    default:
-        $title = "Invalid Scoreboard";
-        break;
+    switch ($duration) {
+        case "week":
+            $title = "Top Scores This Week";
+            break;
+        case "month":
+            $title = "Top Scores This Month";
+            break;
+        case "lifetime":
+            $title = "All Time Top Scores";
+            break;
+        default:
+            $title = "Invalid Scoreboard";
+            break;
+    }
+} else{
+    $results = $scores;
 }
 ?>
 <div class="card bg-dark">
