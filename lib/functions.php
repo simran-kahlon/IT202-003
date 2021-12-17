@@ -168,11 +168,44 @@ function save_score($score, $user_id, $showFlash = false)
     }
 }
 
+function paginate($query, $params = [], $per_page = 10)
+{
+    global $page; //will be available after function is called
+    try {
+        $page = (int)se($_GET, "page", 1, false);
+    } catch (Exception $e) {
+        //safety for if page is received as not a number
+        $page = 1;
+    }
+    $db = getDB();
+    $stmt = $db->prepare($query);
+    try {
+        $stmt->execute($params);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        error_log("paginate error: " . var_export($e, true));
+    }
+    $total = 0;
+    if (isset($result)) {
+        $total = (int)se($result, "total", 0, false);
+    }
+    global $total_pages; //will be available after function is called
+    $total_pages = ceil($total / $per_page);
+    global $offset; //will be available after function is called
+    $offset = ($page - 1) * $per_page;
+}
+//updates or inserts page into query string while persisting anything already present
+function persistQueryString($page)
+{
+    $_GET["page"] = $page;
+    return http_build_query($_GET);
+}
+
 function get_latest_scores($user_id, $limit = 10)
 {
-    if ($limit < 1 || $limit > 50) {
+    /*     if ($limit < 1 || $limit > 50) {
         $limit = 10;
-    }
+    } */
     $query = "SELECT score, created from BGD_Scores where user_id = :id ORDER BY created desc LIMIT :limit";
     $db = getDB();
     $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
@@ -232,7 +265,7 @@ function refresh_points($user_id)
             $stmt->execute([":uid" => $user_id]);
             $r = $stmt->fetch(PDO::FETCH_ASSOC);
             if ($r) {
-                $_SESSION["user"]["points"] = se($r,"points", 0, false);
+                $_SESSION["user"]["points"] = se($r, "points", 0, false);
             }
         }
     }
@@ -251,6 +284,7 @@ function change_points($points, $reason, $user_id)
         try {
             $stmt->execute($params);
             refresh_points($user_id);
+            return true;
         } catch (PDOException $e) {
             flash("Could not change points: " . var_export($e->errorInfo, true), "danger");
         }
@@ -284,38 +318,37 @@ function update_participants($competition_id)
     }
     return false;
 }
-function add_to_competition($competition_id, $user_id)
+function add_to_competition($comp_id, $user_id)
 {
     $db = getDB();
     $stmt = $db->prepare("INSERT INTO CompetitionParticipants (user_id, comp_id) VALUES (:uid, :cid)");
     try {
-        $stmt->execute([":uid" => $user_id, ":cid" => $competition_id]);
-        update_participants($competition_id);
+        $stmt->execute([":uid" => $user_id, ":cid" => $comp_id]);
+        update_participants($comp_id);
         return true;
     } catch (PDOException $e) {
         error_log("Join Competition error: " . var_export($e, true));
     }
     return false;
 }
-function join_competition($competition_id, $user_id, $cost)
+function join_competition($comp_id, $user_id, $cost)
 {
     $points = get_user_points();
-    if ($competition_id > 0) {
+    if ($comp_id > 0) {
         if ($points >= $cost) {
-        $db = getDB();
-        $stmt = $db->prepare("SELECT name, join_fee from Competitions 
-        where id = :id");
-        try {
-            $stmt->execute([":id" => $competition_id]);
-            $r = $stmt->fetch(PDO::FETCH_ASSOC);
-            if ($r) {
-            $cost = (int)se($r, "join_fee", 0, false);
-            $name = se($r, "title", "", false);
-                if ($points >= $cost) {
-                    if (change_points($cost, "join-comp", get_user_id())) {
-                        if (add_to_competition($competition_id, $user_id)) {
-                            flash("Successfully joined $name", "success");
-                        }
+            $db = getDB();
+            $stmt = $db->prepare("SELECT name, join_fee from Competitions where id = :id");
+            try {
+                $stmt->execute([":id" => $comp_id]);
+                $r = $stmt->fetch(PDO::FETCH_ASSOC);
+                if ($r) {
+                    $cost = (int)se($r, "join_fee", 0, false);
+                    $name = se($r, "name", "", false);
+                    if ($points >= $cost) {
+                        if (change_points(-$cost, "join-comp", get_user_id())) {
+                            if (add_to_competition($comp_id, $user_id)) {
+                                flash("Successfully joined $name", "success");
+                            }
                         } else {
                             flash("Failed to pay for competition", "danger");
                         }
@@ -323,9 +356,9 @@ function join_competition($competition_id, $user_id, $cost)
                         flash("You can't afford to join this competition", "warning");
                     }
                 }
-        } catch (PDOException $e) {
-            error_log("Comp lookup error " . var_export($e, true));
-            flash("There was an error looking up the competition", "danger");
+            } catch (PDOException $e) {
+                error_log("Comp lookup error " . var_export($e, true));
+                flash("There was an error looking up the competition", "danger");
             }
         } else {
             flash("You can't afford to join this competition", "warning");
@@ -382,12 +415,12 @@ function calc_winners()
                 $sp = floatval(se($row, "second_place_per", 0, false) / 100);
                 $tp = floatval(se($row, "third_place_per", 0, false) / 100);
                 $reward = (int)se($row, "current_reward", 0, false);
-                $name = se($row, "title", "-", false);
+                $name = se($row, "name", "-", false);
                 $fpr = ceil($reward * $fp);
                 $spr = ceil($reward * $sp);
                 $tpr = ceil($reward * $tp);
                 $competition_id = se($row, "id", -1, false);
-                
+
                 try {
                     $r = get_top_scores_for_comp($competition_id, 3);
                     if ($r) {
@@ -406,7 +439,7 @@ function calc_winners()
                                 }
                                 elog("User $user_id Second place in $name with score of $score");
                             } else if ($index == 2) {
-                                if (change_points($tpr, "won-comp",$user_id)) {
+                                if (change_points($tpr, "won-comp", $user_id)) {
                                     $atleastOne = true;
                                 }
                                 elog("User $user_id Third place in $name with score of $score");

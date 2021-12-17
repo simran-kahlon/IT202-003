@@ -13,13 +13,10 @@ if (isset($_POST["join"])) {
 //handle page load
 //TODO fix join
 $stmt = $db->prepare("SELECT Competitions.id, name, min_participants, current_participants, 
-current_reward, expires, min_score, join_fee, IF(comp_id is null, 0, 1) as joined,  
-CONCAT(first_place,'% - ', second_place, '% - ', third_place, '%') as place FROM Competitions
+join_fee, starting_reward, current_reward, paid_out, duration, expires, min_score, IF(comp_id is null, 0, 1) as joined,
+CONCAT(first_place_per,'% - ', second_place_per, '% - ', third_place_per, '%') as place FROM Competitions
 LEFT JOIN (SELECT * FROM CompetitionParticipants WHERE user_id = :uid) as uc ON 
-uc.comp_id = Competitions.id WHERE expires > current_timestamp() ORDER BY expires desc");
-/*$stmt = $db->prepare("SELECT BGD_Competitions.id, title, min_participants, current_participants, current_reward, expires, creator_id, min_score, join_cost, IF(competition_id is null, 0, 1) as joined,  CONCAT(first_place,'% - ', second_place, '% - ', third_place, '%') as place FROM BGD_Competitions
-JOIN BGD_Payout_Options on BGD_Payout_Options.id = BGD_Competitions.payout_option
-LEFT JOIN BGD_UserComps on BGD_UserComps.competition_id = BGD_Competitions.id WHERE user_id = :uid AND expires > current_timestamp() AND did_payout < 1 AND did_calc < 1 ORDER BY expires desc");*/
+uc.comp_id = Competitions.id WHERE expires > current_timestamp() AND paid_out < 1 ORDER BY expires asc limit 10");
 $results = [];
 try {
     $stmt->execute([":uid" => get_user_id()]);
@@ -34,9 +31,31 @@ try {
 ?>
 <div class="container-fluid">
     <h1>List Competitions</h1>
+    <style>
+                    table {
+                        border: 1px solid black;
+                        width: 50%;
+                        text-align: center;
+                    }
+
+                    th,
+                    td {
+                        border-bottom: 1px solid black;
+                        border-right: 1px solid black;
+                    }
+
+                    tr:hover {
+                        background-color: rgb(157, 115, 236);
+                    }
+
+                    th {
+                        background-color: rebeccapurple;
+                        color: white;
+                    }
+                </style>
     <table class="table text-light">
         <thead>
-            <th>Title</th>
+            <th>Name</th>
             <th>Participants</th>
             <th>Reward</th>
             <th>Min Score</th>
@@ -47,7 +66,7 @@ try {
             <?php if (count($results) > 0) : ?>
                 <?php foreach ($results as $row) : ?>
                     <tr>
-                        <td><?php se($row, "title"); ?></td>
+                        <td><?php se($row, "name"); ?></td>
                         <td><?php se($row, "current_participants"); ?>/<?php se($row, "min_participants"); ?></td>
                         <td><?php se($row, "current_reward"); ?><br>Payout: <?php se($row, "place", "-"); ?></td>
                         <td><?php se($row, "min_score"); ?></td>
@@ -58,8 +77,8 @@ try {
                             <?php else : ?>
                                 <form method="POST">
                                     <input type="hidden" name="comp_id" value="<?php se($row, 'id'); ?>" />
-                                    <input type="hidden" name="cost" value="<?php se($row, 'join_cost', 0); ?>" />
-                                    <input type="submit" name="join" class="btn btn-primary" value="Join (Cost: <?php se($row, "join_fee", 0) ?>)" />
+                                    <input type="hidden" name="cost" value="<?php se($row, 'join_fee', 0); ?>" />
+                                    <input type="submit" name="join" class="btn btn-primary" value="Join (Fee: <?php se($row, "join_fee", 0) ?>)" />
                                 </form>
                             <?php endif; ?>
                             <a class="btn btn-secondary" href="view_competition.php?id=<?php se($row, 'id'); ?>">View</a>
@@ -74,3 +93,6 @@ try {
         </tbody>
     </table>
 </div>
+<?php
+        require_once(__DIR__ . "/../../partials/flash.php");
+?>

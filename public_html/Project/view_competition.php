@@ -10,15 +10,17 @@ if (isset($_POST["join"])) {
     join_competition($comp_id, $user_id, $fee);
 }
 $id = se($_GET, "id", -1, false);
-/* if ($id < 1) {
-    flash("Invalid competition", "danger");
+ if ($id < 1) {
+    
     redirect("list_competition.php");
-} */
+    flash("Invalid competition", "danger");
+} 
 //handle page load
 $stmt = $db->prepare("SELECT Competitions.id, name, min_participants, current_participants, 
 current_reward, expires, min_score, join_fee, IF(comp_id is null, 0, 1) as joined,  
-CONCAT(first_place,'% - ', second_place, '% - ', third_place, '%') as place FROM Competitions
-JOIN CompetitionParticipants on CompetitionParticipants.comp_id = Competitions.id WHERE user_id = :uid AND Competitions.id = :cid");
+CONCAT(first_place_per,'% - ', second_place_per, '% - ', third_place_per, '%') as place FROM Competitions
+LEFT JOIN (SELECT * FROM CompetitionParticipants WHERE user_id = :uid) as uc ON 
+uc.comp_id = Competitions.id WHERE Competitions.id = :cid");
 $row = [];
 $comp = "";
 try {
@@ -47,7 +49,7 @@ try {
         </thead>
         <tbody>
             <?php if (count($row) > 0) : ?>
-                <td><?php se($row, "title"); ?></td>
+                <td><?php se($row, "name"); ?></td>
                 <td><?php se($row, "current_participants"); ?>/<?php se($row, "min_participants"); ?></td>
                 <td><?php se($row, "current_reward"); ?><br>Payout: <?php se($row, "place", "-"); ?></td>
                 <td><?php se($row, "min_score"); ?></td>
@@ -76,3 +78,6 @@ try {
     include(__DIR__ . "/../../partials/score_table.php");
     ?>
 </div>
+<?php
+        require_once(__DIR__ . "/../../partials/flash.php");
+?>
