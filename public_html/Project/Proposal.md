@@ -23,7 +23,7 @@
 ### Proposal Checklist and Evidence
 
 - Milestone 1
-    - [x] \(10/11/2021) User will be able to register a new account
+    - [ ] \(10/11/2021) User will be able to register a new account
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/register.php page))
@@ -34,7 +34,7 @@
                     - Screenshot #1 description: I am showing the register page of my website to show that a person has the option of registering
                   - Screenshot #2 <img width="240" alt="Screen Shot 2021-11-08 at 1 43 52 PM" src="https://user-images.githubusercontent.com/89927109/141145010-8dc13e64-89ca-49f4-a03b-c00440e5439f.png">
                       - Screenshot #2 description: I am showing that a person is succesfully able to register 
-    - [x] \(10/28/2021) User will be able to login to their account (given they enter the correct credentials)
+    - [ ] \(10/28/2021) User will be able to login to their account (given they enter the correct credentials)
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/login.php
@@ -45,7 +45,7 @@
                     - Screenshot #1 description: shows the login screen and that people have a place to login
                  - Screenshot #2 <img width="482" alt="Screen Shot 2021-11-10 at 9 35 13 PM" src="https://user-images.githubusercontent.com/89927109/141227162-85a50aaa-ea6b-418d-be30-a5adc66c93e9.png">
                     - Screenshot #1 description: shows that a person can succesffuly log in with correct credentials 
-    - [x] \(10/28/2021) User will be able to logout
+    - [ ] \(10/28/2021) User will be able to logout
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/logout.php (this will take you to login page because that is where logout directs you so you can login again)
@@ -57,7 +57,7 @@
                     - Screenshot #1 description: This page is login but it shows logout in the navigation bar so it shows that a person has to option of logging out. After you logout, it just directs you back to login page.
                - Screenshot #2 <img width="353" alt="Screen Shot 2021-11-15 at 12 25 47 PM" src="https://user-images.githubusercontent.com/89927109/141826659-0243e7c1-ba6c-4851-9a43-3caa1ab06571.png">
                     - Screenshot #2 description: This shows the logged out page with the succesfully logged out message and shows that it redirects you to login page
-    - [x] \(10/28/2021) Basic security rules implemented
+    - [ ] \(10/28/2021) Basic security rules implemented
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/admin/create_role.php; https://skk7-prod.herokuapp.com/Project/admin/list_roles.php; https://skk7-prod.herokuapp.com/Project/admin/assign_roles.php
@@ -72,7 +72,7 @@
                     - Screenshot #3 description: This shows the error that is displayed when a non admin tries to go to admin roles
                   - Screenshot #4 <img width="380" alt="Screen Shot 2021-11-10 at 10 53 32 PM" src="https://user-images.githubusercontent.com/89927109/141234138-c4131226-c77a-4b49-97ca-656ad7bbbf2e.png">
                     - Screenshot #3 description: This shows the error that is displayed when a user tries to go to a page that is only avaiable once logged in such as the profile page
-    - [x] \(10/28/2021) Basic Roles implemented
+    - [ ] \(10/28/2021) Basic Roles implemented
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/admin/create_role.php; https://skk7-prod.herokuapp.com/Project/admin/list_roles.php; https://skk7-prod.herokuapp.com/Project/admin/assign_roles.php
@@ -88,7 +88,7 @@
                     - Screenshot #3 description: This is what the assign roles page would like if you are in the admin role
                - Screenshot #4 <img width="977" alt="Screen Shot 2021-11-10 at 10 23 36 PM" src="https://user-images.githubusercontent.com/89927109/141231644-e1652892-66c5-4245-a168-214f2675e357.png">
                     - Screenshot #3 description: This shows that I have the roles table
-    - [x] \(10/28/21) Site should have basic styles/theme applied; everything should be styled
+    - [ ] \(10/28/21) Site should have basic styles/theme applied; everything should be styled
          -  List of Evidence of Feature Completion
             - Status: Compeleted
             - Direct Link: https://skk7-prod.herokuapp.com/Project/styles.css (you could see the actual styles on the actual website by using nay of the other direct links)
@@ -99,7 +99,7 @@
                     - Screenshot #1 description: This shows the change in backgorund color, navigation bar layout, the navigation bar color, and change in color of the nav when you hover it. 
                - Screenshot #2 <img width="300" alt="Screen Shot 2021-11-10 at 10 12 20 PM" src="https://user-images.githubusercontent.com/89927109/141230717-e6d72992-2f98-4ab8-bd96-e88900e02df4.png">
                     - Screenshot #2 description: This shows the style for showing the errors. The colors for some other errors can aso be seen in the output messages/errors section below. 
-    - [x] \(10/11/2021) Any output messages/errors should be "user friendly"
+    - [ ] \(10/11/2021) Any output messages/errors should be "user friendly"
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/login.php
@@ -120,7 +120,7 @@
                     - Screenshot #6 description: shows the error that is displayed when a user tries to log into an account with an email not registered
                   - Screenshot #7 <img width="365" alt="current password incorrect when changing it" src="https://user-images.githubusercontent.com/89927109/141227563-2a6ce025-3634-400b-9cf7-43503dfb9d77.png">
                     - Screenshot #7 description: shows the error that is displayed when a user tries to change their password in their profile with the wronf curent password   
-    - [x] \(10/28/2021) User will be able to see their profile
+    - [ ] \(10/28/2021) User will be able to see their profile
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php
@@ -129,7 +129,7 @@
              - Screenshots
                  - Screenshot #1 <img width="294" alt="Screen Shot 2021-11-08 at 4 05 20 PM" src="https://user-images.githubusercontent.com/89927109/141227730-c06c8434-7739-4f30-83b0-f1af62c0e592.png">
                     - Screenshot #1 description: This shows my profile 
-    - [x] \(10/28/2021) User will be able to edit their profile
+    - [ ] \(10/28/2021) User will be able to edit their profile
          -  List of Evidence of Feature Completion
             - Status: Completed
             - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php (this link is to the profile page where you can update it)
@@ -140,146 +140,7 @@
                     - Screenshot #1 description: shows that a user can successful update their profile using the "update profile" button at the bottom.
                     
 - Milestone 2
-    - [x] \(11/29/21) Pick a simple game to implement, anything that generates a score that’s more advanced than a simple random number generator (may build off of a sample from the site shared in class)
-         -  List of Evidence of Feature Completion
-            - Status: Completed
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/game.php
-             - Pull Requests
-                - - PR link #1: https://github.com/simkahlo/IT202-003/pull/73
-                - PR link #2: https://github.com/simkahlo/IT202-003/pull/85 (after fixing the game)
-             - Screenshots
-                 - Screenshot #1 <img width="619" alt="Screen Shot 2021-11-29 at 9 26 16 PM" src="https://user-images.githubusercontent.com/89927109/143974721-1cb46aa8-3c6c-4c4c-b426-04d988b4d68b.png">
-                    - Screenshot #1 description: shows that I have a simple game on my website that also generates score. I am using the shooter game from html5 examples and you get scores for shooting at the enemy (green box). 
-    - [x] \(11/29/21) The system will save the user’s score at the end of the game if the user is logged in
-         -  List of Evidence of Feature Completion
-            - Status: Completed
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/home.php
-             - Pull Requests
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/76
-                - PR link #2: https://github.com/simkahlo/IT202-003/pull/88 (after fixing saving scores)
-             - Screenshots
-                 - Screenshot #1: <img width="506" alt="Screen Shot 2021-11-29 at 9 35 34 PM" src="https://user-images.githubusercontent.com/89927109/143975606-fe66ea9c-8d81-4150-b58e-2c28da4a42b2.png">
-                    - Screenshot #1 description: shows the scores table with id, user_id, created columns and each of them are new entries since it doesn't have updated column 
-    - [x] \(11/29/21) The user will be able to see their last 10 scores
-         -  List of Evidence of Feature Completion
-            - Status: Completed
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php
-             - Pull Requests
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/79
-             - Screenshots
-                 - Screenshot #1: <img width="539" alt="Screen Shot 2021-11-29 at 9 39 37 PM" src="https://user-images.githubusercontent.com/89927109/143976007-2496b3cf-5fd9-4d93-abce-b8a01d6a7a5b.png">
-                    - Screenshot #1 description: shows the last 10 scores table on profile page ordered by most recent
-    - [x] \(11/29/21) Create functions that output the following scoreboards (this will be used later)
-         -  List of Evidence of Feature Completion
-            - Status: Completed
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/home.php
-             - Pull Requests
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/82
-             - Screenshots
-                 - Screenshot #1 <img width="934" alt="Screen Shot 2021-11-29 at 9 44 54 PM" src="https://user-images.githubusercontent.com/89927109/143976513-eeedc1d4-ff98-4394-a8ac-67c1b28240cc.png">
-                    - Screenshot #1 description: shows the function for scoreboard got top 10 weekly, monthly, and lifetime
-                 - Screenshot #2 <img width="453" alt="Screen Shot 2021-11-29 at 9 48 15 PM" src="https://user-images.githubusercontent.com/89927109/143976881-c0480d8a-fd18-4d2c-9cae-8981ae1a3940.png">
-                     - Screenshot #2 description: code to display proper message when there are no results 
-
-- Milestone 3
-    - [x] \(12/06/2021 of completion) User will have points associated with account
-         -  List of Evidence of Feature Completion
-            - Status: Completed
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php
-             - Pull Requests
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/111
-             - Screenshots
-                 - Screenshot #1: <img width="439" alt="Screen Shot 2021-12-10 at 11 24 15 PM" src="https://user-images.githubusercontent.com/89927109/145663631-e7d95a88-96ae-4d97-8493-692a01f6a043.png">
-                    - Screenshot #1 description: this shows the code for altering the users table to add points column and shows default is 0
-                 - Screenshot #2: <img width="975" alt="Screen Shot 2021-12-10 at 11 24 27 PM" src="https://user-images.githubusercontent.com/89927109/145663669-fe2d6f65-e0f0-4fd1-9fbe-959a2f481396.png">
-                    - Screenshot #2 description: this shows users table actually having the points column
-                  - Screenshot #3: <img width="713" alt="Screen Shot 2021-12-10 at 11 27 55 PM" src="https://user-images.githubusercontent.com/89927109/145663697-96f413df-bbf3-479e-8d17-0507d196db56.png">
-                    - Screenshot #2 description: this shows the profile page of the website showing the user points
-    - [x] \(12/10/2021 of completion) Create a PointsHistory table (id, user_id, point_change, reason, created)
-         -  List of Evidence of Feature Completion
-            - Status: Completed
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php
-             - Pull Requests
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/114 (creating actual table)
-                - PR link #2: https://github.com/simkahlo/IT202-003/pull/119 (has functions related to it)
-             - Screenshots
-                 - Screenshot #1: <img width="641" alt="Screen Shot 2021-12-10 at 11 33 18 PM" src="https://user-images.githubusercontent.com/89927109/145663835-3ae1b8e5-4450-4cfe-a94c-0e02b85d6be4.png">
-                    - Screenshot #1 description: shows the table with id, user_id, point_change, reason, created
-                 - Screenshot #2: <img width="655" alt="Screen Shot 2021-12-10 at 11 35 01 PM" src="https://user-images.githubusercontent.com/89927109/145663868-38b280b1-2084-4489-a946-a79ea1ba4fdd.png">
-                    - Screenshot #2 description: shows code for updating profile. hard to show on the website but you can see once you create a competition, the points go down by 1 + reward. the code shows sums the point_change.
-    - [x] \(12/10/2021 of completion) Competitions table should have the following columns (id, name, created, duration, expires (now + duration), current_reward, starting_reward, join_fee, current_participants, min_participants, paid_out (boolean), min_score, first_place_per, second_place_per, third_place_per, cost_to_create, created, modified)
-         -  List of Evidence of Feature Completion
-            - Status: Completed
-             - Pull Requests
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
-             - Screenshots
-                 - Screenshot #1: <img width="939" alt="Screen Shot 2021-12-10 at 11 39 14 PM" src="https://user-images.githubusercontent.com/89927109/145664002-2f6520af-7a0a-4317-98a0-bee510fe7bdc.png">
-                  <img width="1005" alt="Screen Shot 2021-12-10 at 11 39 32 PM" src="https://user-images.githubusercontent.com/89927109/145664004-ebbd4103-f2be-4135-8cbf-835134ad700f.png">
-                  <img width="734" alt="Screen Shot 2021-12-10 at 11 39 55 PM" src="https://user-images.githubusercontent.com/89927109/145664005-3ca416c6-7174-4a0e-8d70-73cc393a52c7.png">
-                    - Screenshot #1 description: shows the Competitions table created with the requires column. The name of the table is Competitions
-    - [x] \(12/10/2021 of completion) User will be able to create a competion
-         -  List of Evidence of Feature Completion
-            - Status: Completed
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
-             - Pull Requests
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
-             - Screenshots
-                 - Screenshot #1: <img width="699" alt="Screen Shot 2021-12-10 at 11 44 16 PM" src="https://user-images.githubusercontent.com/89927109/145664094-07cbf83b-f72a-4d68-9c73-c41750dcbe21.png">
-                    - Screenshot #1 description: create competition form to create competition
-                - Screenshot #2: <img width="749" alt="Screen Shot 2021-12-10 at 11 45 48 PM" src="https://user-images.githubusercontent.com/89927109/145664120-d9428f39-d189-4159-bcd7-e75c31e10c02.png">
-                    - Screenshot #2 description: shows the reward must start at 1, participants has to be at least 3, and join fee must be at least 0. it also shows that it displays user friendly messages. 
-                - Screenshot #3: <img width="773" alt="Screen Shot 2021-12-10 at 11 48 45 PM" src="https://user-images.githubusercontent.com/89927109/145664188-c4c40c66-218d-4f37-8e73-4c589368ad37.png">
-                    - Screenshot #3 description: shows successful message after creating competion
-                - Screenshot #4: <img width="507" alt="Screen Shot 2021-12-10 at 11 50 02 PM" src="https://user-images.githubusercontent.com/89927109/145664214-52ed31c7-f294-4a11-864f-6ba1f51cc3d9.png">
-                    - Screenshot #4 description: adds the competion creator to competitionParticipants
-                - Screenshot #5: <img width="705" alt="Screen Shot 2021-12-10 at 11 51 27 PM" src="https://user-images.githubusercontent.com/89927109/145664251-5e800f8d-0d56-4127-9e20-24a2b26b2fad.png">
-                    - Screenshot #5 description: acan't create competion if you can't affor it
-    - [x] \(12/10/21 of completion) Each new participant causes the Reward value to increase by at least 1 or 50% of the joining fee rounded up
-         -  List of Evidence of Feature Completion
-            - Status: Completed
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
-             - Pull Requests
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
-             - Screenshots
-                 - Screenshot #1 <img width="622" alt="Screen Shot 2021-12-10 at 11 53 34 PM" src="https://user-images.githubusercontent.com/89927109/145664309-a5a83486-c7ac-472d-824b-a30ba0ea24c3.png">
-                    - Screenshot #1 description: line 275v of code shows that reward is updated by 50% of joining fee when participant is updated 
-    - [ ] \(mm/dd/yyyy of completion) Have a page where the User can see active competitions (not expired)
-         -  List of Evidence of Feature Completion
-            - Status: Pending
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/view_competition.php
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
-             - Screenshots
-                 - Screenshot #1: <img width="712" alt="Screen Shot 2021-12-10 at 11 56 27 PM" src="https://user-images.githubusercontent.com/89927109/145664391-136c16e4-03c9-4212-ac4e-9361995614db.png">
-                    - Screenshot #1 description: I have the table to show competion but for some reason it's keep having problems fetching competions with any code I change. I have been trying to fix the issue for more than an hour and still trying.  
-    - [x] \(12/10/2021 of completion) Will need an association table CompetitionParticipants (id, comp_id, user_id, created)
-         -  List of Evidence of Feature Completion
-            - Status: Completed
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
-             - Pull Requests
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
-             - Screenshots
-                 - Screenshot #1: <img width="496" alt="Screen Shot 2021-12-11 at 12 05 04 AM" src="https://user-images.githubusercontent.com/89927109/145664644-159f75e8-bcba-4270-8997-8c72272ccbe0.png">
-                    - Screenshot #1 description: shows the CompetionParticipants table created with the required columns. It is called CompetionParticipants. 
-    - [ ] \(mm/dd/yyyy of completion) User can join active competitions 
-         -  List of Evidence of Feature Completion
-            - Status: Pending
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/view_competition.php
-             - Pull Requests
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
-             - Screenshots
-                 - Screenshot #1: <img width="569" alt="Screen Shot 2021-12-11 at 12 07 55 AM" src="https://user-images.githubusercontent.com/89927109/145664722-d93c8914-08f8-4b85-9df0-5916c09c9691.png">
-                    - Screenshot #1 description: I have these functions to have users join competion but I am not sure how well they work since I can't display competions on the website. Although I can't see other users joining the competion. I am able to see that the creator can join the competion. I have been trying to make these functions as best as I can. 
-    - [ ] \(mm/dd/yyyy of completion) Create function that calculates competition winners
-         -  List of Evidence of Feature Completion
-            - Status: Pending
-            - Direct Link: https://skk7-prod.herokuapp.com/Project/create_competition.php
-             - Pull Requests
-                - PR link #1: https://github.com/simkahlo/IT202-003/pull/119
-             - Screenshots
-                 - Screenshot #1: <img width="456" alt="Screen Shot 2021-12-11 at 12 10 44 AM" src="https://user-images.githubusercontent.com/89927109/145664796-5146d37a-27bf-4637-a681-36b9c13069ac.png">
-                    - Screenshot #1 description: I have these functions so far but I am again not sure how well they work since I am unable to see anything on the website and because no other users can join the comeptions since they can't competitions. I have been trying to make these functions as best as I can. 
-- Milestone 4
-    - [ ] \(mm/dd/yyyy of completion) User can set their profile to be public or private (will need another column in Users table)
+    - [ ] \(mm/dd/yyyy of completion) Pick a simple game to implement, anything that generates a score that’s more advanced than a simple random number generator (may build off of a sample from the site shared in class)
          -  List of Evidence of Feature Completion
             - Status: Pending (Completed, Partially working, Incomplete, Pending)
             - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
@@ -288,7 +149,7 @@
              - Screenshots
                  - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
                     - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) User will be able to see their competition history
+    - [ ] \(mm/dd/yyyy of completion) The system will save the user’s score at the end of the game if the user is logged in
          -  List of Evidence of Feature Completion
             - Status: Pending (Completed, Partially working, Incomplete, Pending)
             - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
@@ -296,8 +157,8 @@
                 - PR link #1 (repeat as necessary)
              - Screenshots
                  - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show       
-    - [ ] \(mm/dd/yyyy of completion) User with the role of “admin” can edit a competition where paid_out = false
+                    - Screenshot #1 description explaining what you're trying to show
+    - [ ] \(mm/dd/yyyy of completion) The user will be able to see their last 10 scores
          -  List of Evidence of Feature Completion
             - Status: Pending (Completed, Partially working, Incomplete, Pending)
             - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
@@ -305,8 +166,8 @@
                 - PR link #1 (repeat as necessary)
              - Screenshots
                  - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show       
-    - [ ] \(mm/dd/yyyy of completion) Add pagination to the Active Competitions view
+                    - Screenshot #1 description explaining what you're trying to show
+    - [ ] \(mm/dd/yyyy of completion) Create functions that output the following scoreboards (this will be used later)
          -  List of Evidence of Feature Completion
             - Status: Pending (Completed, Partially working, Incomplete, Pending)
             - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
@@ -314,52 +175,9 @@
                 - PR link #1 (repeat as necessary)
              - Screenshots
                  - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show  
-    - [ ] \(mm/dd/yyyy of completion) Anywhere a username is displayed should be a link to that user’s profile
-         -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-             - Pull Requests
-                - PR link #1 (repeat as necessary)
-             - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show  
-    - [ ] \(mm/dd/yyyy of completion) Viewing an active or expired competition should show the top 10 scoreboard related to that competition
-         -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-             - Pull Requests
-                - PR link #1 (repeat as necessary)
-             - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show  
-    - [ ] \(mm/dd/yyyy of completion) Game should be fully implemented/complete by this point
-         -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-             - Pull Requests
-                - PR link #1 (repeat as necessary)
-             - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show  
-    - [ ] \(mm/dd/yyyy of completion) User’s score history will include pagination
-         -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-             - Pull Requests
-                - PR link #1 (repeat as necessary)
-             - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show  
-    - [ ] \(mm/dd/yyyy of completion) Home page will have a weekly, monthly, and lifetime scoreboard
-         -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
-             - Pull Requests
-                - PR link #1 (repeat as necessary)
-             - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show  
+                    - Screenshot #1 description explaining what you're trying to show
+- Milestone 3
+- Milestone 4
 ### Intructions
 #### Don't delete this
 1. Pick one project type
