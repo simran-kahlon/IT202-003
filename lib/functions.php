@@ -415,7 +415,7 @@ function calc_winners()
                 $sp = floatval(se($row, "second_place_per", 0, false) / 100);
                 $tp = floatval(se($row, "third_place_per", 0, false) / 100);
                 $reward = (int)se($row, "current_reward", 0, false);
-                $name = se($row, "title", "-", false);
+                $name = se($row, "name", "-", false);
                 $fpr = ceil($reward * $fp);
                 $spr = ceil($reward * $sp);
                 $tpr = ceil($reward * $tp);
