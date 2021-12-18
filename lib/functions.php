@@ -370,8 +370,9 @@ function join_competition($comp_id, $user_id, $cost)
 function get_top_scores_for_comp($comp_id, $limit = 10)
 {
     $db = getDB();
-    $stmt = $db->prepare("SELECT * FROM (SELECT s.user_id, s.score,s.created, a.id as 
-    user_id, DENSE_RANK() OVER (PARTITION BY s.user_id ORDER BY s.score desc) as `rank` FROM BGD_Scores s
+    $stmt = $db->prepare("SELECT * FROM (SELECT s.user_id, s.score,s.created, Users.username, DENSE_RANK() 
+    OVER (PARTITION BY s.user_id ORDER BY s.score desc) as `rank` FROM BGD_Scores s
+    JOIN Users on Users.id = s.user_id
     JOIN CompetitionParticipants uc on uc.user_id = s.user_id
     JOIN Competitions c on uc.comp_id = c.id
     WHERE c.id = :cid AND s.created BETWEEN uc.created AND c.expires
