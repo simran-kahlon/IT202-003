@@ -9,7 +9,7 @@ if (!is_logged_in()) {
 <?php
 $db = getDB();
 
-$stmt = $db->prepare("SELECT c.*, UC.user_id as reg FROM Competitions c LEFT JOIN (SELECT * FROM CompetitionParticipants where user_id = :id) 
+$stmt = $db->prepare("SELECT c.*, UC.user_id as reg, CONCAT(first_place_per,'% - ', second_place_per, '% - ', third_place_per, '%') as place FROM Competitions c LEFT JOIN (SELECT * FROM CompetitionParticipants where user_id = :id) 
 as UC on c.id = UC.comp_id WHERE c.expires > current_timestamp AND paid_out = 0 AND (UC.user_id = :id) ORDER BY expires ASC limit 10");
 $r = $stmt->execute([":id" => get_user_id(),]);
 if ($r) {
@@ -59,9 +59,9 @@ if ($r) {
                     <!-- <?php if ($r["user_id"] == get_user_id()) : ?>
                                     (Created)
                                 <?php endif; ?> -->
-                    <td><?php echo ($r["min_participants"]); ?></td>
+                    <td><?php se($r, "current_participants"); ?>/<?php se($r, "min_participants"); ?></td>
                     <td><?php echo ($r["min_score"]); ?></td>
-                    <td><?php echo ($r["current_reward"]); ?></td>
+                    <td><?php se($r, "current_reward"); ?><br>Payout: <?php se($r, "place", "-"); ?></td>
                     <!--TODO show payout-->
                     <td><?php echo ($r["expires"]); ?></td>
                     <td>
