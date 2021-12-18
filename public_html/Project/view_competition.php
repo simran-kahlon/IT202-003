@@ -34,7 +34,8 @@ try {
     flash("There was a problem fetching competitions, please try again later", "danger");
     error_log("List competitions error: " . var_export($e, true));
 }
-//$scores = get_top_scores_for_comp($id);
+$scores = get_top_scores_for_comp($id);
+$user_id = get_user_id();
 ?>
 <div class="container-fluid">
     <h1>View Competition: <?php se($comp); ?></h1>
@@ -74,7 +75,7 @@ try {
     </table>
     <?php
     //$scores is defined above
-    $title = $comp . " Top Scores";
+    $title = $comp . "'s Top Scores";
     include(__DIR__ . "/../../partials/score_table.php");
     ?>
 </div>
