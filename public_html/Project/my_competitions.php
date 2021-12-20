@@ -10,13 +10,42 @@ if (!is_logged_in()) {
 $db = getDB();
 
 $stmt = $db->prepare("SELECT c.*, UC.user_id as reg, CONCAT(first_place_per,'% - ', second_place_per, '% - ', third_place_per, '%') as place FROM Competitions c LEFT JOIN (SELECT * FROM CompetitionParticipants where user_id = :id) 
-as UC on c.id = UC.comp_id WHERE c.expires > current_timestamp AND paid_out = 0 AND (UC.user_id = :id) ORDER BY expires ASC limit 10");
+as UC on c.id = UC.comp_id WHERE (UC.user_id = :id) ORDER BY expires ASC");
 $r = $stmt->execute([":id" => get_user_id(),]);
 if ($r) {
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 } else {
     flash("There was a problem looking up competitions: " . var_export($stmt->errorInfo(), true), "danger");
 }
+
+$records_per_page =10;
+$query = "SELECT count(1) as total FROM Competitions";
+paginate($query, [], $records_per_page);
+
+$base_query = "SELECT c.*, UC.user_id as reg, CONCAT(round(first_place_per*100),'% - ', round(second_place_per*100), '% - ', round(third_place_per*100), '%') as place FROM Competitions c LEFT JOIN (SELECT * FROM CompetitionParticipants where user_id = :id) 
+as UC on c.id = UC.comp_id WHERE  (UC.user_id = :id) ORDER BY expires desc";
+$query = " LIMIT :offset, :limit";
+$params[":offset"] = $offset;
+$params[":limit"] = $records_per_page;
+$params[":id"] = get_user_id();
+$stmt = $db->prepare($base_query. $query);
+$results = [];
+    foreach ($params as $key => $value) {
+        $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+        $stmt->bindValue($key, $value, $type);
+    }
+    $params = null; //set it to null to avoid issues
+    
+    try {
+        $stmt->execute($params); //dynamically populated params to bind
+        $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if ($r) {
+            $results = $r;
+        }
+    } catch (PDOException $e) {
+        flash("<pre>" . var_export($e, true) . "</pre>");
+    } 
+
 ?>
 <div class="container-fluid">
     <h3>My Competitions</h3> <?php if (isset($results) && count($results)) : ?>
@@ -84,7 +113,7 @@ if ($r) {
             </tbody>
         </table>
 </div>
-
+<?php include(__DIR__ . "/../../partials/pagination.php"); ?>
 <?php
 require_once(__DIR__ . "/../../partials/flash.php");
 ?>
