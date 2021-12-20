@@ -10,17 +10,50 @@ if (isset($_POST["join"])) {
     $points = get_user_points();
     join_competition($comp_id, $user_id, $fee);
 }
+$records_per_page =10;
+$query = "SELECT count(1) as total FROM Competitions WHERE expires > current_timestamp() AND paid_out < 1";
+paginate($query, [], $records_per_page);
+
+
 //handle page load
 //TODO fix join
-$stmt = $db->prepare("SELECT Competitions.id, name, min_participants, current_participants, 
+/* $stmt = $db->prepare("SELECT Competitions.id, name, min_participants, current_participants, 
 join_fee, starting_reward, current_reward, paid_out, duration, expires, min_score, IF(comp_id is null, 0, 1) as joined,
 CONCAT(first_place_per,'% - ', second_place_per, '% - ', third_place_per, '%') as place FROM Competitions
 LEFT JOIN (SELECT * FROM CompetitionParticipants WHERE user_id = :uid) as uc ON 
-uc.comp_id = Competitions.id WHERE expires > current_timestamp() AND paid_out < 1 ORDER BY expires asc limit 10");
+uc.comp_id = Competitions.id WHERE expires > current_timestamp() AND paid_out < 1 ORDER BY expires asc");
 $results = [];
 try {
     $stmt->execute([":uid" => get_user_id()]);
     $r = $stmt->fetchAll();
+    if ($r) {
+        $results = $r;
+    }
+} catch (PDOException $e) {
+    flash("There was a problem fetching competitions, please try again later", "danger");
+    error_log("List competitions error: " . var_export($e, true));
+} */
+
+$base_query = "SELECT Competitions.id, name, min_participants, current_participants, 
+join_fee, starting_reward, current_reward, paid_out, duration, expires, min_score, IF(comp_id is null, 0, 1) as joined,
+CONCAT(round(first_place_per*100),'% - ', round(second_place_per*100), '% - ', round(third_place_per*100), '%') as place FROM Competitions
+LEFT JOIN (SELECT * FROM CompetitionParticipants WHERE user_id = :uid) as uc ON 
+uc.comp_id = Competitions.id WHERE expires > current_timestamp() AND paid_out < 1 ORDER BY expires asc";
+$query = " LIMIT :offset, :limit";
+$params[":offset"] = $offset;
+$params[":limit"] = $records_per_page;
+$params[":uid"] = get_user_id();
+$stmt = $db->prepare($base_query. $query);
+$results = [];
+foreach ($params as $key => $value) {
+    $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+    $stmt->bindValue($key, $value, $type);
+}
+$params = null; //set it to null to avoid issues
+
+try {
+    $stmt->execute($params); //dynamically populated params to bind
+    $r = $stmt->fetchAll(PDO::FETCH_ASSOC);
     if ($r) {
         $results = $r;
     }
@@ -92,6 +125,7 @@ try {
             <?php endif; ?>
         </tbody>
     </table>
+    <?php include(__DIR__ . "/../../partials/pagination.php"); ?>
 </div>
 <?php
         require_once(__DIR__ . "/../../partials/flash.php");
