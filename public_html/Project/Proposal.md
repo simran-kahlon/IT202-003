@@ -1,7 +1,7 @@
 # Project Name: Simple Arcade
 ## Project Summary: This project will create a simple Arcade with scoreboards and competitions based on the implemented game.
 ## Github Link: https://github.com/simkahlo/IT202-003/tree/prod
-## Project Board Link: 
+## Demo Link: https://mediaspace.njit.edu/media/IT202+demo/1_jovmwsfz
 ## Website Link: https://skk7-prod.herokuapp.com/Project/login.php
 ## Your Name: Simran Kahlon
 
