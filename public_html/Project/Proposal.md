@@ -297,7 +297,7 @@
                     - Screenshot #1 description: This screenshot shows that a user has the option of becoming a public in their profile page. Later features will show it working properly. 
                 - Screenshot #2: <img width="932" alt="Screen Shot 2021-12-20 at 9 19 37 PM" src="https://user-images.githubusercontent.com/89927109/146859806-b295b40c-4468-40dd-9648-80714a911384.png">
                     - Screenshot #2 description: This shows me viewing a profile of a different public user. It shows that it only shows their username, time joined, and score history. It does not show their email. 
-    - [x] (10/20/21)) User will be able to see their competition history
+    - [x] (12/20/21)) User will be able to see their competition history
          -  List of Evidence of Feature Completion
             - Status: Completed 
             - Direct Link: https://skk7-prod.herokuapp.com/Project/my_competitions.php?page=1
