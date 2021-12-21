@@ -286,87 +286,109 @@
                  - Screenshot #1: <img width="456" alt="Screen Shot 2021-12-11 at 12 10 44 AM" src="https://user-images.githubusercontent.com/89927109/145664796-5146d37a-27bf-4637-a681-36b9c13069ac.png">
                     - Screenshot #1 description: functions to calculate competition winners.  
 - Milestone 4
-    - [ ] \(mm/dd/yyyy of completion) User can set their profile to be public or private (will need another column in Users table)
+    - [x] \(12/14/21) User can set their profile to be public or private (will need another column in Users table)
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Complete
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php?edit=true
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/127
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show
-    - [ ] \(mm/dd/yyyy of completion) User will be able to see their competition history
+                 - Screenshot #1: <img width="1000" alt="Screen Shot 2021-12-20 at 9 13 49 PM" src="https://user-images.githubusercontent.com/89927109/146859249-996c80ff-7272-4c48-bc8e-7415e607e0e9.png">
+                    - Screenshot #1 description: This screenshot shows that a user has the option of becoming a public in their profile page. Later features will show it working properly. 
+                - Screenshot #2: <img width="932" alt="Screen Shot 2021-12-20 at 9 19 37 PM" src="https://user-images.githubusercontent.com/89927109/146859806-b295b40c-4468-40dd-9648-80714a911384.png">
+                    - Screenshot #2 description: This shows me viewing a profile of a different public user. It shows that it only shows their username, time joined, and score history. It does not show their email. 
+    - [x] (10/20/21)) User will be able to see their competition history
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed 
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/my_competitions.php?page=1
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/153 (mostly here)
+                - PR link #2: https://github.com/simkahlo/IT202-003/pull/156 (with fixes: participants and reward)
+                - PR link #3: https://github.com/simkahlo/IT202-003/pull/165 (with pagination)
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show       
+                 - Screenshot #1: <img width="946" alt="Screen Shot 2021-12-20 at 9 27 19 PM" src="https://user-images.githubusercontent.com/89927109/146860487-6bdd15b2-ea84-4e65-80aa-0c090bb80d04.png">
+                    - Screenshot #1 description: This shows 10 competitions the user is registered in. It limits the results to 10 competitions per page. It also shows the pagination option at the buttom. 
+                   - Screenshot #2: <img width="932" alt="Screen Shot 2021-12-20 at 9 29 25 PM" src="https://user-images.githubusercontent.com/89927109/146860657-bdbac8fb-f9a2-4b4b-b6a2-8ab25c9f024d.png">
+                    - Screenshot #1 description: This shows that page 2 does show different competitions. While it does incorrectly show the wrong number of pages needed to display all the registered competitions, it does show the correct number of competitons the user is registered in. I know this issue existes because I am missing the where part in the query for which I tried doing CompetitionParticipant.user_id=:id but it did not work. While having this issue, I still marked this feature completed because it does have all the components needed and does show the currect outputs. For example, even if the user is only registered in 13 compeitions and shows that it has 5 pages, on the third page it will show that there are no competitions.
     - [ ] \(mm/dd/yyyy of completion) User with the role of “admin” can edit a competition where paid_out = false
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Incomplete
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/admin/edit_competition.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/171
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show       
-    - [ ] \(mm/dd/yyyy of completion) Add pagination to the Active Competitions view
+                 - Screenshot #1: <img width="1012" alt="Screen Shot 2021-12-20 at 9 36 22 PM" src="https://user-images.githubusercontent.com/89927109/146861319-2a68844a-472d-45f6-9dd7-67b9c7c64c92.png">
+                    - Screenshot #1 description: This is the only feature I was unable to complete due to the difficulty of making it work. I did attempt it and tried using edit items as a guide to make this feature work but I still unable to do so. I tried to show the competions table again using the get_coloums() function and give the edit option and using the updatedata() function but nothing showed up.  
+    - [x] \(12/20/21) Add pagination to the Active Competitions view
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/list_competition.php?page=1
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/159
+                - PR link #2: https://github.com/simkahlo/IT202-003/pull/162 (pagination file forgot to include in first pull request)
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show  
-    - [ ] \(mm/dd/yyyy of completion) Anywhere a username is displayed should be a link to that user’s profile
+                 - Screenshot #1: <img width="893" alt="Screen Shot 2021-12-20 at 9 43 28 PM" src="https://user-images.githubusercontent.com/89927109/146861999-f237181c-dea5-4da7-b053-722299739ef7.png">
+                 - Screenshot #2: <img width="950" alt="Screen Shot 2021-12-20 at 9 43 34 PM" src="https://user-images.githubusercontent.com/89927109/146861976-5aea7924-5fbf-4ef2-9ce2-7cfa7909c0a3.png">
+                    - Screenshot #1 & #2 description: These show the pagination at the bottom of the table and shows that the secod page shows different competitions than first page. It also shows that only max of 10 competitons are displayed on a page. 
+                - Screenshot #3: <img width="1030" alt="Screen Shot 2021-12-20 at 9 47 21 PM" src="https://user-images.githubusercontent.com/89927109/146862309-dcb285c0-09e9-4562-a7d8-ea11fc7724fb.png">
+                    - Screenshot #3 description: Since I have active competitions right now, I am unable to show the message if there are no active competitions. However, this is the code to display the approprite messahe if there are no results for active competitions. 
+    - [x] \(12/14/21) Anywhere a username is displayed should be a link to that user’s profile
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/home.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/127
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show  
-    - [ ] \(mm/dd/yyyy of completion) Viewing an active or expired competition should show the top 10 scoreboard related to that competition
+                 - Screenshot #1: <img width="1144" alt="Screen Shot 2021-12-20 at 9 53 52 PM" src="https://user-images.githubusercontent.com/89927109/146862961-612e3ad0-2576-48a9-a645-99759089b1f9.png">
+                    - Screenshot #1 description: this shows the home page scoreboard and it shows that each of the usernames are links (to their profiles)
+                - Screenshot #2: <img width="1019" alt="Screen Shot 2021-12-20 at 9 58 24 PM" src="https://user-images.githubusercontent.com/89927109/146863429-ad7fef0a-4ecc-4119-86b3-0db56e570c6a.png">
+                    - Screenshot #2 description: This shows the message if someone tries to view a private profile
+                - Screenshot #3: <img width="918" alt="Screen Shot 2021-12-20 at 10 00 14 PM" src="https://user-images.githubusercontent.com/89927109/146863608-4831a7b8-ba91-4b31-8c0e-7ad0eacfc5b4.png">
+                    - Screenshot #3 description: This is what the page looks like when someone views a public profile
+                - Screenshot #4: <img width="1162" alt="Screen Shot 2021-12-20 at 10 01 16 PM" src="https://user-images.githubusercontent.com/89927109/146863723-da98efad-97fd-4705-85b4-1770e0e0a05c.png">
+                    - Screenshot #4 description: This shows that the scorevoard for the competitions also has the link to user's profile. 
+    - [x] \(12/17/21) Viewing an active or expired competition should show the top 10 scoreboard related to that competition
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/view_competition.php?id=68
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/150
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show  
-    - [ ] \(mm/dd/yyyy of completion) Game should be fully implemented/complete by this point
+                 - Screenshot #1: <img width="1175" alt="Screen Shot 2021-12-20 at 10 04 16 PM" src="https://user-images.githubusercontent.com/89927109/146863984-48e78066-23b5-4ec4-a1ec-1ca191da0a68.png">
+                    - Screenshot #1 description: This shows that when someone views a competion, they can see the scoreboard for that competition. 
+    - [x] \(12/17/21) Game should be fully implemented/complete by this point
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/game.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/147
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show  
-    - [ ] \(mm/dd/yyyy of completion) User’s score history will include pagination
+                 - Screenshot #1: <img width="937" alt="Screen Shot 2021-12-20 at 10 07 20 PM" src="https://user-images.githubusercontent.com/89927109/146864260-5d7b7b14-6eb0-49d0-9fee-f5f9a40d0f60.png">
+                    - Screenshot #1 description: this shows the complete game that has scoring. It also shows that it is available to non logged in users but they have to be logged in to save scores. 
+    - [x] \(12/20/21) User’s score history will include pagination
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/profile.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/168
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show  
-    - [ ] \(mm/dd/yyyy of completion) Home page will have a weekly, monthly, and lifetime scoreboard
+                 - Screenshot #1: <img width="978" alt="Screen Shot 2021-12-20 at 10 13 46 PM" src="https://user-images.githubusercontent.com/89927109/146864821-b493e04f-1c70-424f-8ad0-92f4d8a0a051.png">
+                 - Screenshot #2: <img width="926" alt="Screen Shot 2021-12-20 at 10 14 58 PM" src="https://user-images.githubusercontent.com/89927109/146864928-d81b84ba-6373-4715-8c30-08c7f14640b6.png">
+                    - Screenshot #1 & #2 description: This shows the pagination at the bottom of the table and that differnt pages show differnt scores. It shows 10 scores per page. This also doesn't caulculate the total pages correctly which is also due to the missing where part in the count query. I still marked it complete beacuse it does have all the components and does show the correct outputs. shows no scores available on extra pages. 
+                 - Screenshot #3:<img width="919" alt="Screen Shot 2021-12-20 at 10 17 48 PM" src="https://user-images.githubusercontent.com/89927109/146865211-0f6a42e5-ad8d-439f-b4fc-e7eab49413e6.png">
+                    - Screenshot #3 description: This shows the correct message where there are no scores to show.
+                    
+    - [x] \(11/29/21) Home page will have a weekly, monthly, and lifetime scoreboard
          -  List of Evidence of Feature Completion
-            - Status: Pending (Completed, Partially working, Incomplete, Pending)
-            - Direct Link: (Direct link to the file or files in heroku prod for quick testing (even if it's a protected page))
+            - Status: Completed
+            - Direct Link: https://skk7-prod.herokuapp.com/Project/home.php
              - Pull Requests
-                - PR link #1 (repeat as necessary)
+                - PR link #1: https://github.com/simkahlo/IT202-003/pull/82
              - Screenshots
-                 - Screenshot #1 (paste the image so it uploads to github) (repeat as necessary)
-                    - Screenshot #1 description explaining what you're trying to show  
+                 - Screenshot #1: <img width="1105" alt="Screen Shot 2021-12-20 at 10 24 19 PM" src="https://user-images.githubusercontent.com/89927109/146865793-d0761550-4e44-4b11-91c2-8d52dda93955.png">
+                    - Screenshot #1 description: This shows the weekly scoreboard with usernams and scores. It also shows the game link in the nav.
+                 - Screenshot #2: <img width="529" alt="Screen Shot 2021-12-20 at 10 26 30 PM" src="https://user-images.githubusercontent.com/89927109/146865979-e4dd9df3-a6c6-4872-b270-ffb3d0e9d817.png">
+                    - Screenshot #2 description: This shows that you can display scoreboad for weekly, monthly, and lifetime. 
 ### Intructions
 #### Don't delete this
 1. Pick one project type
