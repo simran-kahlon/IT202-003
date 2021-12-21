@@ -114,7 +114,7 @@ try {
     <?php endif; ?>
     <br>
     <br>
-    <?php if ($isMe) 
+    <?php if ($isMe)
         echo ("Points: $points ");
     ?>
     <br>
@@ -124,50 +124,96 @@ try {
         <div>Joined: <?php se($created); ?></div>
         <!-- TODO any other public info -->
         <div>
-            <?php $scores = get_latest_scores($user_id); ?>
+            <?php
+            $records_per_page = 10;
+            $query = "SELECT count(1) as total FROM BGD_Scores";
+            $stmt->execute([":id" => $user_id]);
+            paginate($query, [], $records_per_page);
+
+            $base_query = "SELECT score, created from BGD_Scores where user_id = :id ORDER BY created desc";
+            $query = " LIMIT :offset, :limit";
+            $params[":offset"] = $offset;
+            $params[":limit"] = $records_per_page;
+            $params[":id"] = $user_id;
+            $stmt = $db->prepare($base_query . $query);
+            $scores = [];
+            foreach ($params as $key => $value) {
+                $type = is_int($value) ? PDO::PARAM_INT : PDO::PARAM_STR;
+                $stmt->bindValue($key, $value, $type);
+            }
+            $params = null; //set it to null to avoid issues
+
+            try {
+                $stmt->execute($params); //dynamically populated params to bind
+                $score = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if ($score) {
+                    $scores = $score;
+                }
+            } catch (PDOException $e) {
+                error_log("Error getting latest scores for user $user_id: " . var_export($e->errorInfo, true));
+            }
+            ?>
             <br>
-            <details>
-                <summary>Score History</summary>
-                <style>
-                    table {
-                        border: 1px solid black;
-                        width: 50%;
-                        text-align: center;
-                    }
 
-                    th,
-                    td {
-                        border-bottom: 1px solid black;
-                        border-right: 1px solid black;
-                    }
+            <h1>Score History</h1>
+            <style>
+                table {
+                    border: 1px solid black;
+                    width: 50%;
+                    text-align: center;
+                }
 
-                    tr:hover {
-                        background-color: rgb(157, 115, 236);
-                    }
+                th,
+                td {
+                    border-bottom: 1px solid black;
+                    border-right: 1px solid black;
+                }
 
-                    th {
-                        background-color: rebeccapurple;
-                        color: white;
-                    }
-                </style>
-                <table class="table text-light">
-                    <thead>
-                        <th>Score</th>
-                        <th>Time</th>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($scores as $score) : ?>
-                            <tr>
-                                <td><?php se($score, "score", 0); ?></td>
-                                <td><?php se($score, "created", "-"); ?></td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                tr:hover {
+                    background-color: rgb(157, 115, 236);
+                }
+
+                th {
+                    background-color: rebeccapurple;
+                    color: white;
+                }
+            </style>
+            <table class="table text-light">
+                <thead>
+                    <th>Score</th>
+                    <th>Time</th>
+                </thead>
+                <tbody>
+                <?php if (count($scores) > 0) : ?>
+                    <?php foreach ($scores as $score) : ?>
+                        <tr>
+                            <td><?php se($score, "score", 0); ?></td>
+                            <td><?php se($score, "created", "-"); ?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php else : ?>
+                    <tr>
+                        <td colspan="100%">No scores to show</td>
+                    </tr>
+                    <?php endif; ?>
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item <?php echo ($page - 1) < 1 ? "disabled" : ""; ?>">
+                        <a class="page-link" href="?<?php se(persistQueryString($page - 1)); ?>" tabindex="-1">Previous</a>
+                    </li>
+                    <?php for ($i = 0; $i < $total_pages; $i++) : ?>
+                        <li class="page-item <?php echo ($page - 1) == $i ? "active" : ""; ?>"><a class="page-link" href="?<?php se(persistQueryString($i + 1)); ?>"><?php echo ($i + 1); ?></a></li>
+                    <?php endfor; ?>
+                    <li class="page-item <?php echo ($page) >= $total_pages ? "disabled" : ""; ?>">
+                        <a class="page-link" href="?<?php se(persistQueryString($page + 1)); ?>">Next</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     <?php endif; ?>
     <br>
-
     <?php if ($isMe && $edit) : ?>
         <details>
             <summary> Update Profile </summary>
